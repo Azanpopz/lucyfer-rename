@@ -675,18 +675,15 @@ async def auto_filter(client, msg, spoll=False):
     if imdb and imdb.get('poster'):
         try:
             await message.reply_photo(                             
-            photo=imdb.get('poster'), caption=cap, btn, reply_markup=InlineKeyboardMarkup(btn))
+            photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
+            await cap.reply
             btn = [
             [
                 InlineKeyboardButton(
-                    text="☘𝐂𝐡𝐚𝐧𝐧𝐞𝐥☘", url='https://t.me/bigmoviesworld')
-                
-                
-                    
-
+                    text=f"☘𝐂𝐡𝐚𝐧𝐧𝐞𝐥☘", url='https://t.me/bigmoviesworld')                                                   
             ]
             
         ]
