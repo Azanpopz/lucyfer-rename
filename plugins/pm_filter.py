@@ -683,7 +683,7 @@ async def auto_filter(client, msg, spoll=False):
             InlineKeyboardButton('🔻𝐁𝐚𝐜𝐤🔻', callback_data='help'),
             InlineKeyboardButton('👺𝐀𝐝𝐦𝐢𝐧👺', callback_data='admin')
         ]]
-        reply_markup = InlineKeyboardMarkup(buttons)     
+             
             await message.reply_photo(photo=poster, caption=cap, reply_markup=InlineKeyboardMarkup(button))
         except Exception as e:
             logger.exception(e)
