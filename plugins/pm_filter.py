@@ -94,7 +94,7 @@ async def next_page(bot, query):
 
     if not files:
         return
-    if get_search_results
+    if filter
         results.append(
                 [
                     InlineKeyboardButton("🔘 JOIN OUR MAIN CHANNEL 🔘", url="https://t.me/mazhatthullikal")
@@ -602,7 +602,7 @@ async def auto_filter(client, msg, spoll=False):
         search, files, offset, total_results = spoll
     if not files:
         return
-    if get_search_results
+    if filter
         results.append(
                 [
                     InlineKeyboardButton("🔘 JOIN OUR MAIN CHANNEL 🔘", url="https://t.me/mazhatthullikal")
