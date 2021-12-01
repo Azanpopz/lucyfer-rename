@@ -678,16 +678,7 @@ async def auto_filter(client, msg, spoll=False):
             photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
-            poster = pic.replace('.jpg', "._V1_UX360.jpg")
-            await cap.reply
-            btn = [
-            [
-                InlineKeyboardButton(
-                    text=f"☘𝐂𝐡𝐚𝐧𝐧𝐞𝐥☘", url='https://t.me/bigmoviesworld')                                                   
-            ]
-            
-        ]
-             
+            poster = pic.replace('.jpg', "._V1_UX360.jpg")                                    
             await message.reply_photo(photo=poster, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
         except Exception as e:
             logger.exception(e)
