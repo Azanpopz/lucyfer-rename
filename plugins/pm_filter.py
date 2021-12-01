@@ -93,7 +93,7 @@ async def next_page(bot, query):
         n_offset = 0
 
     if not files:
-        റിട്ടേൺ
+        return
     if filters:
         results.append(
                 [
@@ -600,6 +600,14 @@ async def auto_filter(client, msg, spoll=False):
     else:
         message = msg.message.reply_to_message # msg will be callback query
         search, files, offset, total_results = spoll
+    if not files:
+        return
+    if filters:
+        results.append(
+                [
+                    InlineKeyboardButton("🔘 JOIN OUR MAIN CHANNEL 🔘", url="https://t.me/mazhatthullikal")
+                ]
+            )
     if SINGLE_BUTTON:
         btn = [
             [
