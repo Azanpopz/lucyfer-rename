@@ -93,7 +93,13 @@ async def next_page(bot, query):
         n_offset = 0
 
     if not files:
-        return
+        റിട്ടേൺ
+    if filters:
+        results.append(
+                [
+                    InlineKeyboardButton("🔘 JOIN OUR MAIN CHANNEL 🔘", url="https://t.me/mazhatthullikal")
+                ]
+            )
     if SINGLE_BUTTON:
         btn = [
             [
@@ -104,12 +110,7 @@ async def next_page(bot, query):
             for file in files
         ]
     else:
-    if filters:
-        results.append(
-                [
-                    InlineKeyboardButton("🔘 JOIN OUR MAIN CHANNEL 🔘", url="https://t.me/mazhatthullikal")
-                ]
-            )
+    
         btn = [
             [
                 InlineKeyboardButton(
