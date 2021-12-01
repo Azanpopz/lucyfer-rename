@@ -94,13 +94,13 @@ async def next_page(bot, query):
 
     if not files:
         return
-    if filters:
+    for filters:
         results.append(
                 [
                     InlineKeyboardButton("🔘 JOIN OUR MAIN CHANNEL 🔘", url="https://t.me/mazhatthullikal")
                 ]
             )
-    for SINGLE_BUTTON:
+    if SINGLE_BUTTON:
         btn = [
             [
                 InlineKeyboardButton(
@@ -602,13 +602,13 @@ async def auto_filter(client, msg, spoll=False):
         search, files, offset, total_results = spoll
     if not files:
         return
-    if filters:
+    for filters:
         results.append(
                 [
                     InlineKeyboardButton("🔘 JOIN OUR MAIN CHANNEL 🔘", url="https://t.me/mazhatthullikal")
                 ]
             )
-    for SINGLE_BUTTON:
+    if SINGLE_BUTTON:
         btn = [
             [
                 InlineKeyboardButton(
