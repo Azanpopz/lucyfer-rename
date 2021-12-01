@@ -100,7 +100,7 @@ async def next_page(bot, query):
                     InlineKeyboardButton("🔘 JOIN OUR MAIN CHANNEL 🔘", url="https://t.me/mazhatthullikal")
                 ]
             )
-    if SINGLE_BUTTON:
+    for SINGLE_BUTTON:
         btn = [
             [
                 InlineKeyboardButton(
@@ -608,7 +608,7 @@ async def auto_filter(client, msg, spoll=False):
                     InlineKeyboardButton("🔘 JOIN OUR MAIN CHANNEL 🔘", url="https://t.me/mazhatthullikal")
                 ]
             )
-    if SINGLE_BUTTON:
+    for SINGLE_BUTTON:
         btn = [
             [
                 InlineKeyboardButton(
