@@ -690,7 +690,7 @@ async def auto_filter(client, msg, spoll=False):
                     InlineKeyboardButton("🔘 JOIN OUR MAIN CHANNEL 🔘", url="https://t.me/mazhatthullikal")
                 ]
             )
-    else:
+   
         await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     if spoll:
         await msg.message.delete()
