@@ -679,7 +679,8 @@ async def auto_filter(client, msg, spoll=False):
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
-    InlineKeyboardButton('🔻𝐁𝐚𝐜𝐤🔻', callback_data='help'),
+    buttons = [[
+            InlineKeyboardButton('🔻𝐁𝐚𝐜𝐤🔻', callback_data='help'),
             InlineKeyboardButton('👺𝐀𝐝𝐦𝐢𝐧👺', callback_data='admin')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)     
