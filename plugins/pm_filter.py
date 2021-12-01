@@ -104,6 +104,12 @@ async def next_page(bot, query):
             for file in files
         ]
     else:
+    if filters:
+        results.append(
+                [
+                    InlineKeyboardButton("🔘 JOIN OUR MAIN CHANNEL 🔘", url="https://t.me/mazhatthullikal")
+                ]
+            )
         btn = [
             [
                 InlineKeyboardButton(
