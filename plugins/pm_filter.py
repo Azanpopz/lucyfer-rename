@@ -615,7 +615,7 @@ async def auto_filter(client, msg, spoll=False):
                 
                 ),
                 InlineKeyboardButton(
-                    text="🎨CANCEL", callback_data="close_data"
+                    text="🎨JOIN", url='https://t.me/bigmoviesworld"
                 
                     
                 ),
