@@ -613,7 +613,8 @@ async def auto_filter(client, msg, spoll=False):
                 InlineKeyboardButton(
                     text=f"[📤{get_size(file.file_size)}] {file.file_name}", callback_data=f'files#{file.file_id}'
                 
-                ],
+                )
+           ],
                 InlineKeyboardButton(
                     text="🎨JOIN", url='https://t.me/bigmoviesworld'
                 
