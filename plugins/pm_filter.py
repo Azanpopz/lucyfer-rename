@@ -623,7 +623,7 @@ async def auto_filter(client, msg, spoll=False):
                 ),
                     
             ]
-            
+            for file in files
         ]
 
     if offset != "":
