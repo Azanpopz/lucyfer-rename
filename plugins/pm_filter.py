@@ -615,6 +615,7 @@ async def auto_filter(client, msg, spoll=False):
                 
                 )
            ],
+           for file in files
             [
                 InlineKeyboardButton(
                     text="🎨JOIN", url='https://t.me/bigmoviesworld'
@@ -623,7 +624,7 @@ async def auto_filter(client, msg, spoll=False):
                 ),
                     
             ]
-            for file in files
+            
         ]
 
     if offset != "":
