@@ -620,7 +620,7 @@ async def auto_filter(client, msg, spoll=False):
                 ),
                 InlineKeyboardButton(
                     text="CANCEL", callback_data="close_data"
-                InlineKeyboardButton(
+                
                     text="CANCE😜L", callback_data="close_data"
                 ),
                     
