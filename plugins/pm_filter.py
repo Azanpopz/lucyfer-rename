@@ -619,7 +619,7 @@ async def auto_filter(client, msg, spoll=False):
                     callback_data=f'files_#{file.file_id}',
                 ),
                 InlineKeyboardButton(
-                    text=f."[CANCE😜]", callback_data="close_data'
+                    text="CANCEL", callback_data="close_data"
                 
                     
                 ),
