@@ -619,7 +619,7 @@ async def auto_filter(client, msg, spoll=False):
                     callback_data=f'files_#{file.file_id}',
                 ),
                 InlineKeyboardButton(
-                    text="📤☘𝐈𝐦𝐝𝐛☘', url="https://imdb.com"),
+                    text=f"[📤{get_size(file.file_size)}] {file.file_name}",
                 ),
                     
             ]
