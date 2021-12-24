@@ -3,6 +3,13 @@ import aiohttp
 from pyrogram import Client, filters
 from bot import Bot
 
+API_ID = environ.get('API_ID')
+API_HASH = environ.get('API_HASH')
+BOT_TOKEN = environ.get('BOT_TOKEN')
+API_KEY = environ.get('API_KEY')
+
+  
+
 @bot.on_message(filters.regex(r'https?://[^\s]+') & filters.private)
 async def link_handler(bot, message):
     link = message.matches[0].group(0)
