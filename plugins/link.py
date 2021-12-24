@@ -10,14 +10,8 @@ API_KEY = environ.get('API_KEY')
 
 
 
-@bot.on_message(filters.command('start') & filters.private)
-async def start(bot, message):
-    await message.reply(
-        f"**Hi {message.chat.first_name}!**\n\n"
-        "I'm GPlink bot. Just send me link and get short link")
 
-
-@bot.on_message(filters.regex(r'https?://[^\s]+') & filters.private)
+@Client.on_message(filters.regex(r'https?://[^\s]+') & filters.private)
 async def link_handler(bot, message):
     link = message.matches[0].group(0)
     try:
