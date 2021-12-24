@@ -1,7 +1,7 @@
 from os import environ
 import aiohttp
 from pyrogram import Client, filters
-
+from bot import Bot
 
 @bot.on_message(filters.regex(r'https?://[^\s]+') & filters.private)
 async def link_handler(bot, message):
