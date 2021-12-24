@@ -48,7 +48,7 @@ async def start(client, message):
             InlineKeyboardButton('🔍𝐒𝐞𝐚𝐫𝐜𝐡🔎', switch_inline_query_current_chat=''),
             InlineKeyboardButton('🎭𝐔𝐩𝐝𝐚𝐭𝐞𝐬🎭', url='https://t.me/nasrani_update')
             ],[
-            InlineKeyboardButton('🕵️song🕵️', callback_data='song'),
+            InlineKeyboardButton('🕵️𝐇𝐞𝐥𝐩🕵️', callback_data='song'),
             InlineKeyboardButton('😊𝐀𝐛𝐨𝐮𝐭😊', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
