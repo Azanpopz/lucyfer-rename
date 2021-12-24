@@ -1,5 +1,6 @@
-
-
+from os import environ
+import aiohttp
+from pyrogram import Client, filters
 
 
 import logging
@@ -17,6 +18,12 @@ from database.ia_filterdb import Media
 from database.users_chats_db import db
 from info import SESSION, API_ID, API_HASH, BOT_TOKEN, LOG_STR
 from utils import temp
+
+API_ID = environ.get('API_ID')
+API_HASH = environ.get('API_HASH')
+BOT_TOKEN = environ.get('BOT_TOKEN')
+API_KEY = environ.get('API_KEY')
+
 
 class Bot(Client):
 
