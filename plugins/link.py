@@ -1,5 +1,5 @@
 from os import environ
-from bot import Bot
+
 from pyrogram import Client, filters
 
 API_ID = environ.get('API_ID')
