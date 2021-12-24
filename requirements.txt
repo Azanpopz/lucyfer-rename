@@ -12,5 +12,3 @@ youtube_dl
 youtube_search_python
 youtube_search
 ffmpeg-python
-pyrogram==1.2.20
-aiohttp==3.8.1
