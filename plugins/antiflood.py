@@ -29,7 +29,7 @@ if DATABASE_URI is not None:
 )
 async def check_flood(client, message):
     """ check all messages """
-    if DB_URI is None:
+    if DATABASE_URI is None:
         return
     #
     if not CHAT_FLOOD:
