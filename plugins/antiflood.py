@@ -9,10 +9,6 @@ from pyrogram import (
 from pyrogram.types import (
     ChatPermissions
 )
-from bot import (
-    COMMAND_HAND_LER,
-    DATABASE_URI
-)
 from plugins.helper_functions.admin_check import admin_check
 from plugins.helper_functions.cust_p_filters import f_onw_fliter
 if DATABASE_URI is not None:
