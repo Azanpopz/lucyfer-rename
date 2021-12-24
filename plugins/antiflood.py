@@ -9,7 +9,7 @@ from pyrogram import (
 from pyrogram.types import (
     ChatPermissions
 )
-from pyrobot import (
+from bot import (
     COMMAND_HAND_LER,
     DATABASE_URI
 )
