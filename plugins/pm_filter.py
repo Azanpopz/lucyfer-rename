@@ -449,6 +449,23 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
+    elif query.data == "menu":
+        buttons = [[
+            InlineKeyboardButton('🔗𝐌𝐚𝐧𝐮𝐚𝐥 𝐅𝐢𝐥𝐭𝐞𝐫🔗', callback_data='manuelfilter'),
+            InlineKeyboardButton('🗂𝐀𝐮𝐭𝐨 𝐅𝐢𝐥𝐭𝐞𝐫🗂', callback_data='autofilter')
+            ],[
+            InlineKeyboardButton('🔮𝐂𝐨𝐧𝐧𝐞𝐜𝐭𝐢𝐨𝐧🔮', callback_data='coct'),
+            InlineKeyboardButton('🛍𝐄𝐱𝐭𝐫𝐚 𝐌𝐨𝐝𝐬🛍', callback_data='extra')
+            ],[
+            InlineKeyboardButton('🏠𝐇𝐨𝐦𝐞🏠', callback_data='start'),
+            InlineKeyboardButton('📊𝐒𝐭𝐚𝐭𝐬📊', callback_data='stats')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.MENU_TXT.format(query.from_user.mention),
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
     elif query.data == "about":
         buttons= [[
             InlineKeyboardButton('🎭𝐔𝐩𝐝𝐚𝐭𝐞𝐬🎭', url='https://t.me/nasrani_Update'),
