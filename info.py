@@ -1,6 +1,6 @@
 import re
 from os import environ
-import  os
+
 
 
 id_pattern = re.compile(r'^.\d+$')
@@ -71,11 +71,3 @@ LOG_STR += (f"MAX_LIST_ELM Found, long list will be shortened to first {MAX_LIST
 LOG_STR += f"Your Currect IMDB template is {IMDB_TEMPLATE}"
 
 
-BOT_TOKEN = os.environ.get("BOT_TOKEN")
-API_ID = int(os.environ.get("API_ID"))
-API_HASH = os.environ.get("API_HASH")
-
-youtube_next_fetch = 0  # time in minute
-
-
-EDIT_TIME = 5
