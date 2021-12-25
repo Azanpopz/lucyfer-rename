@@ -17,3 +17,4 @@ lyricsgenius
 gTTS
 aiofiles
 aiohttp
+wget
