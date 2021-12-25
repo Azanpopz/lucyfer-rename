@@ -1,2 +1,0 @@
-users ={}
-user_time = {}
