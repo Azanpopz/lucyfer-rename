@@ -23,4 +23,4 @@ https://raw.githubusercontent.com/HasibulKabir/pyrogramarchive/master/pyrogramas
 git+https://github.com/ytdl-org/youtube-dl
 pillow
 hachoir
-googletrans
+googletrans==3.1.0a0
