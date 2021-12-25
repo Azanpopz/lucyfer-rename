@@ -451,7 +451,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "menu":
         buttons = [[
-            InlineKeyboardButton('🔗𝐌𝐚𝐧𝐮𝐚𝐥 𝐅𝐢𝐥𝐭𝐞𝐫🔗', callback_data='manuelfilter'),
+            InlineKeyboardButton('🔗telegraph🔗', callback_data='telegraph'),
             InlineKeyboardButton('🗂𝐀𝐮𝐭𝐨 𝐅𝐢𝐥𝐭𝐞𝐫🗂', callback_data='autofilter')
             ],[
             InlineKeyboardButton('🔮𝐂𝐨𝐧𝐧𝐞𝐜𝐭𝐢𝐨𝐧🔮', callback_data='coct'),
@@ -463,6 +463,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.MENU_TXT.format(query.from_user.mention),
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+    elif query.data == "telegraph":
+        buttons = [[
+            InlineKeyboardButton('📊telegraph📊', callback_data='telegraph')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.TELEGRAPH_TXT.format(query.from_user.mention),
             reply_markup=reply_markup,
             parse_mode='html'
         )
