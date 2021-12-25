@@ -468,12 +468,81 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "telegraph":
         buttons = [[
-            InlineKeyboardButton('🔻Telegraph🔻', callback_data='munu'),
-            InlineKeyboardButton('🕹𝐁𝐮𝐭𝐭𝐨𝐧𝐬🕹', callback_data='button')
-        ]]
+            InlineKeyboardButton('🔻Telegraph🔻', callback_data='munu')
+            ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.TELEGRAPH_TXT.format(query.from_user.mention),
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+    elif query.data == "translation":
+      buttons = [[
+            InlineKeyboardButton('🔻Translation🔻', callback_data='munu')
+            ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.GTRNS_TXT.format(query.from_user.mention),
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+    elif query.data == "games":
+        buttons = [[
+            InlineKeyboardButton('🔻Games🔻', callback_data='munu')
+            ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.GAMES_TXT.format(query.from_user.mention),
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+    elif query.data == "json":
+        buttons = [[
+            InlineKeyboardButton('🔻json🔻', callback_data='munu')
+            ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.JSON_TXT.format(query.from_user.mention),
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+    elif query.data == "song":
+        buttons = [[
+            InlineKeyboardButton('🔻song🔻', callback_data='munu')
+            ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.SONG_TXT.format(query.from_user.mention),
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+    elif query.data == "gplink":
+        buttons = [[
+            InlineKeyboardButton('🔻GPlink🔻', callback_data='munu')
+            ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.GPLINK_TXT.format(query.from_user.mention),
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+    elif query.data == "other":
+        buttons = [[
+            InlineKeyboardButton('🔻Telegraph🔻', callback_data='munu')
+            ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.OTHER_TXT.format(query.from_user.mention),
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+    elif query.data == "purge":
+        buttons = [[
+            InlineKeyboardButton('🔻purge🔻', callback_data='munu')
+            ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.PURGE_TXT.format(query.from_user.mention),
             reply_markup=reply_markup,
             parse_mode='html'
         )
