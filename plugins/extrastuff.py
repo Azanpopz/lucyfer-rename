@@ -9,7 +9,7 @@ from database.gtrans_mdb import find_one
 
 
 
-from gtts import gTTS
+
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, Message
 
