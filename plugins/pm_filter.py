@@ -490,6 +490,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
+    elif query.data == "telegraph":
+        buttons = [[
+            InlineKeyboardButton('🔻𝐁𝐚𝐜𝐤🔻', callback_data='menu')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.SOURCE_TXT,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
     elif query.data == "source":
         buttons = [[
             InlineKeyboardButton('🔻𝐁𝐚𝐜𝐤🔻', callback_data='about')
