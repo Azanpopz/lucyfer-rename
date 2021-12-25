@@ -2,7 +2,7 @@ from os import environ
 import aiohttp
 from pyrogram import Client, filters
 from info import API_ID, API_HASH, API_KEY, BOT_TOKEN
-from bot Import Bot
+
 API_ID = environ.get('API_ID')
 API_HASH = environ.get('API_HASH')
 BOT_TOKEN = environ.get('BOT_TOKEN')
