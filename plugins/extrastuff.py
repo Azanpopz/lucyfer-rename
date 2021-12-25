@@ -7,7 +7,9 @@ from io import BytesIO
 from .list import list
 from database.gtrans_mdb import find_one
 
+from googletrans import Translator
 
+from gtts import gTTS
 
 
 from pyrogram import Client, filters
