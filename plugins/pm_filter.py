@@ -477,7 +477,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode='html'
         )
     elif query.data == "translation":
-      buttons = [[
+        buttons = [[
             InlineKeyboardButton('🔻Translation🔻', callback_data='munu')
             ]]
         reply_markup = InlineKeyboardMarkup(buttons)
