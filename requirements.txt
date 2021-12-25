@@ -25,3 +25,4 @@ pillow
 hachoir
 googletrans==3.1.0a0
 Translator
+gtts
