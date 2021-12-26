@@ -1,4 +1,4 @@
-import bot
+
 import time
 import pyshorteners
 import os
