@@ -8,12 +8,13 @@ from pyrogram.types import *
 
 API = "https://api.abirhasan.wtf/google?query="
 
+API_ID = os.environ.get("API_ID", "")
+API_HASH = os.environ.get("API_HASH", "")
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
+API = os.environ.get("API", "")
 
 
-    bot_token = os.environ["BOT_TOKEN"],
-    api_id = int(os.environ["API_ID"]),
-    api_hash = os.environ["API_HASH"]
-
+    
 
 
 START_TEXT = """Hello {}
