@@ -3,7 +3,15 @@ import time
 import pyshorteners
 import os
 
-(token=os.getenv('TG_BOT_TOKEN'))
+from os import environ
+import aiohttp
+from pyrogram import Client, filters
+from info import BOT_TOKEN
+
+
+BOT_TOKEN = environ.get('BOT_TOKEN')
+
+
 
 def short(url):
     return pyshorteners.Shortener().tinyurl.short(url)
