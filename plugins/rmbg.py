@@ -19,8 +19,8 @@ UNSCREEN_API = os.environ.get("UNSCREEN_API", "")
 
 
 
-@Client.on_message(filters.private & (filters.photo | filters.video | filters.document))
-async def remove_background(bot, update):
+@Client.on_message(filters.private & (filters.photo | filters.video | filters.document)filters.command(["rmbg"]))      
+async def rmbg(bot, update):
     if not REMOVEBG_API:
         await update.reply_text(
             text="Error :- Remove BG Api is error",
