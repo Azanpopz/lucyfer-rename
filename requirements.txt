@@ -18,5 +18,7 @@ gTTS
 aiofiles
 aiohttp
 wget
-
+pyrogram==1.2.9
+tgcrypto==1.2.2
+requests==2.25.1
 
