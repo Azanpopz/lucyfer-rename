@@ -18,3 +18,5 @@ gTTS
 aiofiles
 aiohttp
 wget
+pytelegrambotapi
+pyshorteners
