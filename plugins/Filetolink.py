@@ -18,7 +18,7 @@ def short(url):
     return pyshorteners.Shortener().tinyurl.short(url)
 
 
-@Client.message_handler(content_types=['photo', 'video', 'audio', 'document'])
+@Client.on_message_handler(content_types=['photo', 'video', 'audio', 'document'])
 def file_sent(message):
     try:
         bot.send_message(message.chat.id, short(bot.get_file_url(message.document.file_id)))
