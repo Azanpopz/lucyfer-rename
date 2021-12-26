@@ -6,6 +6,7 @@ from pyrogram import Client, filters
 import logging
 import logging.config
 
+import pyromod.listen
 # Get logging configurations
 logging.config.fileConfig('logging.conf')
 logging.getLogger().setLevel(logging.INFO)
@@ -56,6 +57,3 @@ class Bot(Client):
         await super().stop()
         logging.info("Bot stopped. Bye.")
 
-
-app = Bot()
-app.run()

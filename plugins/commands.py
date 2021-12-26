@@ -9,6 +9,7 @@ import random
 import asyncio
 from Script import script
 from pyrogram import Client, filters
+from database.batch_db import get_batch
 from pyrogram.errors.exceptions.bad_request_400 import ChatAdminRequired
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from database.ia_filterdb import Media, get_file_details, unpack_new_file_id
@@ -18,8 +19,8 @@ from utils import get_size, is_subscribed, temp
 import re
 logger = logging.getLogger(__name__)
 
-@Client.on_message(filters.command("start"))
 
+@Client.on_message(filters.command("start"))
 async def start(client, message):
     if message.chat.type in ['group', 'supergroup']:
         buttons = [            
@@ -86,6 +87,33 @@ async def start(client, message):
         )
         return
     file_id = message.command[1]
+    print(file_id)
+    unique_id, f_id, file_ref, caption = await get_batch("Eva-V3", file_id)
+
+    if unique_id:
+        temp_msg = await message.reply("Please wait...")
+        file_args = f_id.split("#")
+        cap_args = caption.split("#")
+        i = 0
+        await asyncio.sleep(2)
+        await temp_msg.delete()
+        for b_file in file_args:
+            f_caption = cap_args[i]
+            if f_caption is None:
+                f_caption = ""
+            i += 1
+            try:
+                await client.send_cached_media(
+                    chat_id=message.from_user.id,
+                    file_id=b_file,
+                    caption=f_caption,
+                    parse_mode="html"
+                )
+            except Exception as err:
+                return await message.reply(f"{str(err)}")
+            await asyncio.sleep(1)
+        return
+
     files_ = await get_file_details(file_id)
     if not files_:
         return await message.reply('No such file exist.')
