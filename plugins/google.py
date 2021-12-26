@@ -8,9 +8,11 @@ from pyrogram.types import *
 
 API = "https://api.abirhasan.wtf/google?query="
 
-API_ID = environ.get('API_ID')
-API_HASH = environ.get('API_HASH')
-BOT_TOKEN = environ.get('BOT_TOKEN')
+
+
+API_ID = os.environ.get("API_ID", "")
+API_HASH = os.environ.get("API_HASH", "")
+BOT_TOKEN = os.environ.get("BIT_TOKEN", "")
 
     
 
