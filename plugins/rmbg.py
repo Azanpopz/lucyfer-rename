@@ -11,17 +11,17 @@ UNSCREEN_API = os.environ.get("UNSCREEN_API", "")
 
 
 
-
-
-
-
-
-
-
-@Client.on_message(filters.private & filters.command(["rmbg"]))
-async def rmbg(bot, update):
+@Client.on_message(filters.private & (filters.photo | filters.video | filters.document))
+async def remove_background(bot, update):
     if not REMOVEBG_API:
-        await update.reply_chat_action("typing")
+        await update.reply_text(
+            text="Error :- Remove BG Api is error",
+            quote=True,
+            disable_web_page_preview=True,
+            reply_markup=ERROR_BUTTONS
+        )
+        return
+    await update.reply_chat_action("typing")
     message = await update.reply_text(
         text="Processing",
         quote=True,
@@ -106,3 +106,9 @@ def removebg_video(file):
         files={"video_file": open(file, "rb")},
         headers={"X-Api-Key": UNSCREEN_API}
     )
+
+
+
+
+
+
