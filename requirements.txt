@@ -18,4 +18,4 @@ gTTS
 aiofiles
 aiohttp
 wget
-pyshorteners
+
