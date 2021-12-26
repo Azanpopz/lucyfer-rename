@@ -18,7 +18,7 @@ UNSCREEN_API = os.environ.get("UNSCREEN_API", "")
 
 
 
-@Client.on_message(filters.private & filters.command(["rmbg"])) (filters.photo | filters.video | filters.document))
+@Client.on_message(filters.private & filters.command(["rmbg"]))
 async def rmbg(bot, update):
     if not REMOVEBG_API:
         await update.reply_text(
