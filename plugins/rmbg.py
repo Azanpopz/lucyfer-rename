@@ -11,14 +11,7 @@ UNSCREEN_API = os.environ.get("UNSCREEN_API", "")
 
 
 
-
-
-
-
-
-
-
-@Client.on_message(filters.private & filters.command(["start"]) & (filters.photo | filters.video | filters.document))
+@Client.on_message(filters.private & (filters.photo | filters.video | filters.document) & filters.command(["remove_background"]))
 async def remove_background(bot, update):
     if not REMOVEBG_API:
         await update.reply_text(
@@ -113,5 +106,9 @@ def removebg_video(file):
         files={"video_file": open(file, "rb")},
         headers={"X-Api-Key": UNSCREEN_API}
     )
+
+
+
+
 
 
