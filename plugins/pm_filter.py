@@ -856,6 +856,7 @@ async def advantage_spell_chok(msg):
                             ],
                             [
                                 InlineKeyboardButton('🧩𝐆𝐨𝐨𝐠𝐥𝐞🧩', url="https://google.com"),
+                                InlineKeyboardButton('🧩𝐆𝐨𝐨𝐠𝐥𝐞🧩', switch_inline_query_current_chat=update.text"),
                                 InlineKeyboardButton('☘𝐈𝐦𝐝𝐛☘', url="https://imdb.com")
                             ]                            
                         ]
