@@ -2,12 +2,12 @@
 import asyncio
 import re
 import ast
-
+import random
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
 from Script import script
 import pyrogram
 from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, make_inactive
-from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, AUTH_GROUPS, P_TTI_SHOW_OFF, IMDB, SINGLE_BUTTON, SPELL_CHECK_REPLY, IMDB_TEMPLATE
+from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, AUTH_GROUPS, P_TTI_SHOW_OFF, IMDB, SINGLE_BUTTON, SPELL_CHECK_REPLY, IMDB_TEMPLATE, STC
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
@@ -423,34 +423,35 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('🔍𝐒𝐞𝐚𝐫𝐜𝐡🔎', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('🎭𝐔𝐩𝐝𝐚𝐭𝐞𝐬🎭', url='https://t.me/mazhatthullikal')
-            ],[
-            InlineKeyboardButton('🕵️𝐇𝐞𝐥𝐩🕵️', callback_data='help'),
-            InlineKeyboardButton('😊𝐀𝐛𝐨𝐮𝐭😊', callback_data='about')
+            InlineKeyboardButton('🏠help🏠', callback_data='help'),
+            InlineKeyboardButton('📊about📊', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
+            text=script.MENU_TXT.format(query.from_user.mention),
             reply_markup=reply_markup,
             parse_mode='html'
         )
     elif query.data == "help":
         buttons = [[
             InlineKeyboardButton('🔗telegraph🔗', callback_data='telegraph'),
-            InlineKeyboardButton('🔗telegraph🔗', callback_data='telegraph'),            
+            InlineKeyboardButton('🔗GPlink🔗', callback_data='telegraph'),            
             InlineKeyboardButton('🗂song🗂', callback_data='autofilter')
             ],[
-            InlineKeyboardButton('🔗telegraph🔗', callback_data='telegraph'),
-            InlineKeyboardButton('🔗telegraph🔗', callback_data='telegraph'),            
-            InlineKeyboardButton('🗂song🗂', callback_data='autofilter')
+            InlineKeyboardButton('🔗rmbg🔗', callback_data='telegraph'),
+            InlineKeyboardButton('🔗translation🔗', callback_data='telegraph'),            
+            InlineKeyboardButton('🗂purge🗂', callback_data='autofilter')
             ],[
-            InlineKeyboardButton('🔗telegraph🔗', callback_data='telegraph'),
-            InlineKeyboardButton('🔗telegraph🔗', callback_data='telegraph'),            
-            InlineKeyboardButton('🗂song🗂', callback_data='autofilter')
+            InlineKeyboardButton('🔗json🔗', callback_data='telegraph'),
+            InlineKeyboardButton('🔗batch🔗', callback_data='telegraph'),            
+            InlineKeyboardButton('🗂info🗂', callback_data='autofilter')
+            ],[
+            InlineKeyboardButton('🔗manuel filter🔗', callback_data='telegraph'),
+            InlineKeyboardButton('🔗auto filter🔗', callback_data='telegraph'),            
+            InlineKeyboardButton('🗂other🗂', callback_data='autofilter')
             ],[
             InlineKeyboardButton('🏠𝐇𝐨𝐦𝐞🏠', callback_data='start'),
-            InlineKeyboardButton('📊𝐒𝐭𝐚𝐭𝐬📊', callback_data='stats')
+            InlineKeyboardButton('back', callback_data='menu')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -460,20 +461,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "menu":
         buttons = [[
-            InlineKeyboardButton('🔗telegraph🔗', callback_data='telegraph'),
-            InlineKeyboardButton('🔗telegraph🔗', callback_data='telegraph'),            
-            InlineKeyboardButton('🗂song🗂', callback_data='autofilter')
+            InlineKeyboardButton('🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('🔗telegraph🔗', callback_data='telegraph'),
-            InlineKeyboardButton('🔗telegraph🔗', callback_data='telegraph'),            
-            InlineKeyboardButton('🗂song🗂', callback_data='autofilter')
-            ],[
-            InlineKeyboardButton('🔗telegraph🔗', callback_data='telegraph'),
-            InlineKeyboardButton('🔗telegraph🔗', callback_data='telegraph'),            
-            InlineKeyboardButton('🗂song🗂', callback_data='autofilter')
-            ],[
-            InlineKeyboardButton('🏠𝐇𝐨𝐦𝐞🏠', callback_data='start'),
-            InlineKeyboardButton('📊𝐒𝐭𝐚𝐭𝐬📊', callback_data='stats')
+            InlineKeyboardButton('🏠help🏠', callback_data='help'),
+            InlineKeyboardButton('📊about📊', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -541,13 +532,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-    elif query.data == "other":
+    elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('🔻Telegraph🔻', callback_data='munu')
+            InlineKeyboardButton('🔻HOME🔻', callback_data='start')
             ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.OTHER_TXT.format(query.from_user.mention),
+            text=script.ABOUT_TXT.format(query.from_user.mention),
             reply_markup=reply_markup,
             parse_mode='html'
         )
@@ -561,17 +552,17 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-    elif query.data == "about":
+    elif query.data == "other":
         buttons= [[
             InlineKeyboardButton('🎭𝐔𝐩𝐝𝐚𝐭𝐞𝐬🎭', url='https://t.me/nasrani_Update'),
             InlineKeyboardButton('🖇𝐒𝐨𝐮𝐫𝐜𝐞🖇', callback_data='source')
             ],[
-            InlineKeyboardButton('🏠𝐇𝐨𝐦𝐞🏠', callback_data='start'),
+            InlineKeyboardButton('🏠𝐇𝐨𝐦𝐞🏠', callback_data='menu'),
             InlineKeyboardButton('🔐𝐂𝐥𝐨𝐬𝐞🔐', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.ABOUT_TXT.format(temp.B_NAME),
+            text=script.OTHER_TXT.format(temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode='html'
         )
