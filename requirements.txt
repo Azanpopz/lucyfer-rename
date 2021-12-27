@@ -23,3 +23,4 @@ tgcrypto==1.2.2
 requests==2.25.1
 urldl
 pyromod
+python-decouple
