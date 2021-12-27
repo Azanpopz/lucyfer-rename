@@ -101,18 +101,28 @@ async def start(client, message):
             f_caption = cap_args[i]
             if f_caption is None:
                 f_caption = ""
+            f_caption = f_caption + f"\n\n<code>┈•••✿</code> @UniversalFilmStudio <code>✿•••┈</code>"
             i += 1
             try:
                 await client.send_cached_media(
                     chat_id=message.from_user.id,
                     file_id=b_file,
                     caption=f_caption,
-                    parse_mode="html"
+                    parse_mode="html",
+                    reply_markup=InlineKeyboardMarkup(
+                        [
+                            [
+                                InlineKeyboardButton(
+                                    '🎭 ⭕️ ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ ⭕️', url="https://t.me/UFSChatBot"
+                                )
+                            ]
+                        ]
+                    )
                 )
             except Exception as err:
                 return await message.reply(f"{str(err)}")
             await asyncio.sleep(1)
-        return
+        return await message.reply(f"<b><a href='https://t.me/UniversalFilmStudio'>Thank For Using Me...</a></b>")
 
     files_ = await get_file_details(file_id)
     if not files_:

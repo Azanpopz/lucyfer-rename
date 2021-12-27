@@ -6,6 +6,7 @@ from bot import Bot
 from utils import temp
 from struct import pack
 from info import ADMINS
+from Script import script
 from pyrogram.file_id import FileId
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait
@@ -123,11 +124,7 @@ async def batch_file(client: Client, message):
                     message = await client.get_messages(chat_id=second_channel_id, message_ids=current, replies=0)
                 except FloodWait as e:
                     await asyncio.sleep(e.x)
-                    message = await client.get_messages(
-                        second_channel_id,
-                        current,
-                        replies=0
-                    )
+                    message = await client.get_messages(chat_id=second_channel_id, message_ids=current, replies=0)
                 except Exception as e:
                     logger.exception(e)
 
@@ -146,7 +143,8 @@ async def batch_file(client: Client, message):
                     file_id = file_id + _id + "#"
                     file_ref = file_ref + _ref + "#"
                     # file_name = re.sub(r"(_|\-|\.|\+)", " ", str(media.file_name))
-                    cap = media.caption.html if media.caption else None
+                    # cap = media.caption.html if media.caption else None
+                    cap = script.CAPTION_TEXT
                     caption = caption + cap + "#"
                 except Exception as e:
                     if "NoneType" in str(e):
