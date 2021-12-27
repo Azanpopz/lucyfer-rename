@@ -91,7 +91,7 @@ async def start(client, message):
     unique_id, f_id, file_ref, caption = await get_batch("Eva-V3", file_id)
 
     if unique_id:
-        temp_msg = await message.reply("Please wait...")
+        temp_msg = await message.reply("⏳ Please Wait...")
         file_args = f_id.split("#")
         cap_args = caption.split("#")
         i = 0
