@@ -13,7 +13,7 @@ BOT_TOKEN = os.environ.get('BOT_TOKEN')
 
 
 
-@Bot.on_inline_query()
+@Client.on_inline_query()
 async def search(bot, update):
 
     results = VideosSearch(update.query, limit=50).result()
