@@ -450,8 +450,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔗auto filter🔗', callback_data='telegraph'),            
             InlineKeyboardButton('🗂other🗂', callback_data='autofilter')
             ],[
-            InlineKeyboardButton('🏠𝐇𝐨𝐦𝐞🏠', callback_data='start'),
-            InlineKeyboardButton('📊𝐒𝐭𝐚𝐭𝐬📊', callback_data='stats')
+            InlineKeyboardButton('🏠𝐇𝐨𝐦𝐞🏠', callback_data='menu'),
+            InlineKeyboardButton('back', callback_data='menu')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -461,10 +461,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "menu":
         buttons = [[
-            InlineKeyboardButton('🗂help🗂', callback_data='help')
+            InlineKeyboardButton('🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('🏠𝐇𝐨𝐦𝐞🏠', callback_data='start'),
-            InlineKeyboardButton('📊𝐒𝐭𝐚𝐭𝐬📊', callback_data='stats')
+            InlineKeyboardButton('🏠help🏠', callback_data='help'),
+            InlineKeyboardButton('📊about📊', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
