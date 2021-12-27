@@ -13,8 +13,8 @@ BOT_TOKEN = os.environ.get('BOT_TOKEN')
 
 
 
-@Client.on_message(filters.command(["you"]))
-async def you(bot, update):
+@Bot.on_inline_query()
+async def search(bot, update):
 
     results = VideosSearch(update.query, limit=50).result()
     answers = []
