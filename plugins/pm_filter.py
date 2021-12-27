@@ -435,16 +435,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "help":
         buttons = [[
             InlineKeyboardButton('🔗telegraph🔗', callback_data='telegraph'),
-            InlineKeyboardButton('🔗telegraph🔗', callback_data='telegraph'),            
+            InlineKeyboardButton('🔗GPlink🔗', callback_data='telegraph'),            
             InlineKeyboardButton('🗂song🗂', callback_data='autofilter')
             ],[
-            InlineKeyboardButton('🔗telegraph🔗', callback_data='telegraph'),
-            InlineKeyboardButton('🔗telegraph🔗', callback_data='telegraph'),            
-            InlineKeyboardButton('🗂song🗂', callback_data='autofilter')
+            InlineKeyboardButton('🔗rmbg🔗', callback_data='telegraph'),
+            InlineKeyboardButton('🔗translation🔗', callback_data='telegraph'),            
+            InlineKeyboardButton('🗂purge🗂', callback_data='autofilter')
             ],[
-            InlineKeyboardButton('🔗telegraph🔗', callback_data='telegraph'),
-            InlineKeyboardButton('🔗telegraph🔗', callback_data='telegraph'),            
-            InlineKeyboardButton('🗂song🗂', callback_data='autofilter')
+            InlineKeyboardButton('🔗json🔗', callback_data='telegraph'),
+            InlineKeyboardButton('🔗batch🔗', callback_data='telegraph'),            
+            InlineKeyboardButton('🗂info🗂', callback_data='autofilter')
+            ],[
+            InlineKeyboardButton('🔗manuel filter🔗', callback_data='telegraph'),
+            InlineKeyboardButton('🔗auto filter🔗', callback_data='telegraph'),            
+            InlineKeyboardButton('🗂other🗂', callback_data='autofilter')
             ],[
             InlineKeyboardButton('🏠𝐇𝐨𝐦𝐞🏠', callback_data='start'),
             InlineKeyboardButton('📊𝐒𝐭𝐚𝐭𝐬📊', callback_data='stats')
