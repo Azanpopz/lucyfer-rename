@@ -12,7 +12,7 @@ API_KEY = environ.get('API_KEY')
 
 
 
-@Client.on_message(filters.regex(r'https?://[^\s]+') & filters.private & filters.command("bgremove"))
+@Client.on_message(filters.regex(r'https?://[^\s]+') & filters.private & filters.command("link"))
 async def link_handler(bot, message):
     link = message.matches[0].group(0)
     try:
