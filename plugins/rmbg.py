@@ -3,15 +3,11 @@ import requests
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-
 REMOVEBG_API = os.environ.get("REMOVEBG_API", "")
 UNSCREEN_API = os.environ.get("UNSCREEN_API", "")
 
 
-
-
-
-@Client.on_message(filters.private & (filters.photo | filters.video | filters.document))
+@Client.on_message(filters.private & (filters.photo | filters.video | filters.document) & filters.command("bgremove"))
 async def remove_background(bot, update):
     if not REMOVEBG_API:
         await update.reply_text(
@@ -30,7 +26,7 @@ async def remove_background(bot, update):
     try:
         new_file_name = f"./{str(update.from_user.id)}"
         if update.photo or (
-            update.document and "image" in update.document.mime_type
+                update.document and "image" in update.document.mime_type
         ):
             new_file_name += ".png"
             file = await update.download()
@@ -40,7 +36,7 @@ async def remove_background(bot, update):
             )
             new_document = removebg_image(file)
         elif update.video or (
-            update.document and "video" in update.document.mime_type
+                update.document and "video" in update.document.mime_type
         ):
             new_file_name += ".webm"
             file = await update.download()
@@ -70,8 +66,8 @@ async def remove_background(bot, update):
         await update.reply_chat_action("upload_document")
     except Exception as error:
         await message.edit_text(
-           text=error,
-           reply_markup=ERROR_BUTTONS
+            text=error,
+            reply_markup=ERROR_BUTTONS
         )
         return
     try:
@@ -106,9 +102,3 @@ def removebg_video(file):
         files={"video_file": open(file, "rb")},
         headers={"X-Api-Key": UNSCREEN_API}
     )
-
-
-
-
-
-
