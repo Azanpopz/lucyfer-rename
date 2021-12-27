@@ -461,17 +461,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "menu":
         buttons = [[
-            InlineKeyboardButton('🔗telegraph🔗', callback_data='telegraph'),
-            InlineKeyboardButton('🔗telegraph🔗', callback_data='telegraph'),            
-            InlineKeyboardButton('🗂song🗂', callback_data='autofilter')
-            ],[
-            InlineKeyboardButton('🔗telegraph🔗', callback_data='telegraph'),
-            InlineKeyboardButton('🔗telegraph🔗', callback_data='telegraph'),            
-            InlineKeyboardButton('🗂song🗂', callback_data='autofilter')
-            ],[
-            InlineKeyboardButton('🔗telegraph🔗', callback_data='telegraph'),
-            InlineKeyboardButton('🔗telegraph🔗', callback_data='telegraph'),            
-            InlineKeyboardButton('🗂song🗂', callback_data='autofilter')
+            InlineKeyboardButton('🗂help🗂', callback_data='help')
             ],[
             InlineKeyboardButton('🏠𝐇𝐨𝐦𝐞🏠', callback_data='start'),
             InlineKeyboardButton('📊𝐒𝐭𝐚𝐭𝐬📊', callback_data='stats')
