@@ -450,7 +450,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔗auto filter🔗', callback_data='telegraph'),            
             InlineKeyboardButton('🗂other🗂', callback_data='autofilter')
             ],[
-            InlineKeyboardButton('🏠𝐇𝐨𝐦𝐞🏠', callback_data='menu'),
+            InlineKeyboardButton('🏠𝐇𝐨𝐦𝐞🏠', callback_data='start'),
             InlineKeyboardButton('back', callback_data='menu')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
