@@ -10,7 +10,23 @@ API_ID = os.environ.get('API_ID')
 API_HASH = os.environ.get('API_HASH')
 BOT_TOKEN = os.environ.get('BOT_TOKEN')
 
-
+@Client.on_message(filters.private & filters.all)
+async def text(bot, update):
+    
+    text = "Search youtube videos using below buttons.\n\nMade by @FayasNoushad"
+    reply_markup = InlineKeyboardMarkup(
+        [
+            [InlineKeyboardButton(text="Search here", switch_inline_query_current_chat="")],
+            [InlineKeyboardButton(text="Search in another chat", switch_inline_query="")]
+        ]
+    )
+    
+    await update.reply_text(
+        text=text,
+        reply_markup=reply_markup,
+        disable_web_page_preview=True,
+        quote=True
+    )
 
 
 @Client.on_inline_query()
