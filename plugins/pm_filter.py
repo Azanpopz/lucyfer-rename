@@ -532,13 +532,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-    elif query.data == "other":
+    elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('🔻Telegraph🔻', callback_data='munu')
+            InlineKeyboardButton('🔻HOME🔻', callback_data='munu')
             ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.OTHER_TXT.format(query.from_user.mention),
+            text=script.ABOUT_TXT.format(query.from_user.mention),
             reply_markup=reply_markup,
             parse_mode='html'
         )
@@ -552,17 +552,17 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-    elif query.data == "about":
+    elif query.data == "other":
         buttons= [[
             InlineKeyboardButton('🎭𝐔𝐩𝐝𝐚𝐭𝐞𝐬🎭', url='https://t.me/nasrani_Update'),
             InlineKeyboardButton('🖇𝐒𝐨𝐮𝐫𝐜𝐞🖇', callback_data='source')
             ],[
-            InlineKeyboardButton('🏠𝐇𝐨𝐦𝐞🏠', callback_data='start'),
+            InlineKeyboardButton('🏠𝐇𝐨𝐦𝐞🏠', callback_data='menu'),
             InlineKeyboardButton('🔐𝐂𝐥𝐨𝐬𝐞🔐', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.ABOUT_TXT.format(temp.B_NAME),
+            text=script.OTHER_TXT.format(temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode='html'
         )
