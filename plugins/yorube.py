@@ -13,12 +13,11 @@ BOT_TOKEN = os.environ.get('BOT_TOKEN')
 
 
 
-@Client.on_message(
-    filters.command("vid") 
-):
-async def vid(client, message):    
+@Client.on_message(filters.command(["vid"]))
+async def vid(bot, update):
+    await update.reply_text(
     results = VideosSearch(update.vid, limit=50).result()
-    answers = []
+    answers = [])
     
     for result in results:
         title = result["title"]
