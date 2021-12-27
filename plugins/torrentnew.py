@@ -40,7 +40,7 @@ async def torrent_handler(_, message: Message):
         await start_handler(_, message)
 
 
-@TorrentBot.on_inline_query()
+@Client.on_inline_query()
 async def inline_handlers(_, inline: InlineQuery):
     search_ts = inline.query
     answers = []
