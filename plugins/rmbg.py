@@ -7,11 +7,11 @@ REMOVEBG_API = os.environ.get("REMOVEBG_API", "")
 UNSCREEN_API = os.environ.get("UNSCREEN_API", "")
 
 
-@Client.on_message(filters.private & (filters.photo | filters.video | filters.document) & filters.command("bgremove"))
+@Client.on_message(filters.private & (filters.photo | filters.video | filters.document))
 async def remove_background(bot, update):
-    if not update.reply_to_message:
-        await update.reply_text("Reply To Your Photo", quote=True)
-        return
+    # if not update.reply_to_message:
+    #     await update.reply_text("Reply To Your Photo", quote=True)
+    #     return
 
     if not REMOVEBG_API:
         await update.reply_text(
@@ -28,22 +28,22 @@ async def remove_background(bot, update):
         disable_web_page_preview=True
     )
     try:
-        new_file_name = f"./{str(update.reply_to_message.from_user.id)}"
-        if update.reply_to_message.photo or (
-                update.reply_to_message.document and "image" in update.reply_to_message.document.mime_type
+        new_file_name = f"./{str(update.from_user.id)}"
+        if update.photo or (
+                update.document and "image" in update.document.mime_type
         ):
             new_file_name += ".png"
-            file = await update.reply_to_message.download()
+            file = await update.download()
             await message.edit_text(
                 text="Photo downloaded successfully. Now removing background.",
                 disable_web_page_preview=True
             )
             new_document = removebg_image(file)
-        elif update.reply_to_message.video or (
-                update.reply_to_message.document and "video" in update.reply_to_message.document.mime_type
+        elif update.video or (
+                update.document and "video" in update.document.mime_type
         ):
             new_file_name += ".webm"
-            file = await update.reply_to_message.download()
+            file = await update.download()
             await message.edit_text(
                 text="Video downloaded successfully. Now removing background.",
                 disable_web_page_preview=True
@@ -67,7 +67,7 @@ async def remove_background(bot, update):
     try:
         with open(new_file_name, "wb") as file:
             file.write(new_document.content)
-        await update.reply_to_message.reply_chat_action("upload_document")
+        await update.reply_chat_action("upload_document")
     except Exception as error:
         await message.edit_text(
             text=error,
@@ -75,7 +75,7 @@ async def remove_background(bot, update):
         )
         return
     try:
-        await update.reply_to_message.reply_document(
+        await update.reply_document(
             document=new_file_name,
             quote=True
         )
