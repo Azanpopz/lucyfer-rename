@@ -8,7 +8,7 @@ UNSCREEN_API = os.environ.get("UNSCREEN_API", "")
 
 
 @Client.on_message(filters.private & (filters.photo | filters.video | filters.document) & filters.command("bgremove"))
-async def remove_background(client, message):
+async def remove_background(bot, update):
     if not update.reply_to_message:
         await update.reply_text("Reply To Your Photo", quote=True)
         return
