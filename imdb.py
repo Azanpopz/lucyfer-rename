@@ -9,7 +9,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from inf import API_ID
 from inf import API_HASH
 from inf import BOT_TOKEN
-from OMDB import get_movie_inf
+from OMDB import get_movie_info
 #=======================================================================
 
 
