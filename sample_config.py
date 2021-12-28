@@ -9,4 +9,4 @@ class Config(object):
     API_HASH = os.environ.get("API_HASH", "")
 
     # Get this api from https://www.remove.bg/b/background-removal-api
-    RemoveBG_API = os.environ.get("RemoveBG_API", "")
+    REMOVEBG_API = os.environ.get("REMOVEBG_API", "")
