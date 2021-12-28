@@ -26,4 +26,6 @@ pyromod
 python-decouple
 ytthumb
 youtube-search-python
+Pillow
+python-telegram-bot==10.1.0
 
