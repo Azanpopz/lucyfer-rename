@@ -6,6 +6,7 @@ import urllib.request as urllib
 from io import BytesIO
 from PIL import Image
 from pyrogram import Client
+from bot import Bot
 
 import telegram
 import logging
@@ -21,7 +22,14 @@ from telegram.utils.helpers import escape_markdown
 from telegram import Message, Chat, MessageEntity, InlineQueryResultArticle
 from os import path
 
-BOT_TOKEN = environ.get('BOT_TOKEN')
+def getConfig(name: str):
+    return os.environ[name]
+
+try:
+    BOT_TOKEN = getConfig('BOT_TOKEN')
+except KeyError as e:
+    LOGGER.error("BOT_TOKEN env variables missing! Exiting now")
+    exit(1)
 
 
 @run_async
