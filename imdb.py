@@ -6,10 +6,10 @@ from pyrogram import Client, filters
 from pyrogram.types import User, Message
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from info import API_ID
-from info import API_HASH
-from info import BOT_TOKEN
-from OMDB import get_movie_info
+from inf import API_ID
+from inf import API_HASH
+from inf import BOT_TOKEN
+from OMDB import get_movie_inf
 #=======================================================================
 
 
