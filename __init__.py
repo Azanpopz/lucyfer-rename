@@ -104,7 +104,7 @@ print("[INFO]: GATHERING PROFILE INFO")
 x = app.get_me()
 y = app2.get_me()
 
-BOT_ID = x.id
+BOT_TOKEN = x.id
 BOT_NAME = x.first_name + (x.last_name or "")
 BOT_USERNAME = x.username
 BOT_MENTION = x.mention
