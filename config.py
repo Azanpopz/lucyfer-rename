@@ -10,6 +10,8 @@ API_ID = int(os.environ.get("API_ID"))
 API_HASH = os.environ.get("API_HASH")
 RemoveBG_API = os.environ.get("RemoveBG_API", "")
 
+REMOVEBG_API = os.environ.get("REMOVEBG_API", "")
+UNSCREEN_API = os.environ.get("UNSCREEN_API", "")
 
 
 youtube_next_fetch = 0  # time in minute
