@@ -18,17 +18,8 @@ API_KEY = environ.get('API_KEY')
 async def link_handler(bot, message):
     link = message.matches[0].group(0)
     try:
-        short_link = await message.reply(f'Here is your [short link]({short_link})', quote=True)
-        disable_web_page_preview=True,
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(text='Open Link', url=f'({short_link})', quote=True)
-                    InlineKeyboardButton(text='Open Link', url=f'({short_link})', quote=True)
-                ],
-                [InlineKeyboardButton(text='Open Link', url=f'({short_link})', quote=True)]
-            ]
-        )
+        short_link = await get_shortlink(link)
+        await message.reply(f'Here is your [short link]({short_link})', quote=True)
     except Exception as e:
         await message.reply(f'Error: {e}', quote=True)
 
