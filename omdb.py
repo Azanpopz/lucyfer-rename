@@ -7,7 +7,7 @@ from inf import API
 def get_movie_info(movieTitle):
     url = 'http://www.omdbapi.com'
     api_key = API
-    data = {'apikey':api_key,'t':movieTitle}
+    data = {'apikey':api,'t':movieTitle}
     response = requests.get(url,data).json()
 
     if response.get("Response") != "True":
