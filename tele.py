@@ -20,6 +20,8 @@ from database import Database
 AUTH_CHANNEL = os.environ.get("AUTH_CHANNEL", "")
 ADMINS = int(os.environ["ADMINS"])
 DATABASE_URL = os.environ["DATABASE_URL"]
+db = Database(DATABASE_URL, "FnTelegraphBot")
+
 API_ID = os.environ.get('API_ID')
 API_HASH = os.environ.get('API_HASH')
 BOT_TOKEN = os.environ.get('BOT_TOKEN')
