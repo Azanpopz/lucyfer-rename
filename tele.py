@@ -170,9 +170,9 @@ async def telegraph_upload(bot, update):
     if not await db.is_user_exist(update.from_user.id):
 	    await db.add_user(update.from_user.id)
     
-    if UPDATE_CHANNEL:
+    if AUTH_CHANNEL:
         try:
-            user = await bot.get_chat_member(UPDATE_CHANNEL, update.chat.id)
+            user = await bot.get_chat_member(AUTH_CHANNEL, update.chat.id)
             if user.status == "kicked":
                 await update.reply_text(text="You are banned!")
                 return
@@ -180,7 +180,7 @@ async def telegraph_upload(bot, update):
             await update.reply_text(
 		  text=FORCE_SUBSCRIBE_TEXT,
 		  reply_markup=InlineKeyboardMarkup(
-			  [[InlineKeyboardButton(text="⚙ Join Updates Channel ⚙", url=f"https://telegram.me/{UPDATE_CHANNEL}")]]
+			  [[InlineKeyboardButton(text="⚙ Join Updates Channel ⚙", url=f"https://telegram.me/{AUTH_CHANNEL}")]]
 		  )
 	    )
             return
