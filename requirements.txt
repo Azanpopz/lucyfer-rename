@@ -26,4 +26,4 @@ pyromod
 python-decouple
 ytthumb
 youtube-search-python
-Pillow
+
