@@ -23,10 +23,10 @@ async def link_handler(bot, message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(text="Open Link", url=f"({short_link})', quote=True"), 
+                    InlineKeyboardButton(text="Open Link", url=f"({short_link})',"), 
                     InlineKeyboardButton(text="Share Link", url=f"telegram")
                 ],
-                [InlineKeyboardButton(text="⚙ Join Updates Channel ⚙", url="({short_link})',")]
+                [InlineKeyboardButton(text="⚙ Join Updates Channel ⚙", url="https://gggg.com")]
             ]
         )
     except Exception as e:
