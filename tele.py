@@ -231,8 +231,8 @@ async def telegraph_upload(bot, update):
     )
 
 
-@Client.on_message(filters.private & filters.command("bro") & filters.user(BOT_OWNER) & filters.reply)
-async def broadcast(bot, update):
+@Client.on_message(filters.private & filters.command("bro") & filters.user(ADMINS) & filters.reply)
+async def bro(bot, update):
 	broadcast_ids = {}
 	all_users = await db.get_all_users()
 	broadcast_msg = update.reply_to_message
