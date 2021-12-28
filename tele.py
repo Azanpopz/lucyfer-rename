@@ -23,6 +23,9 @@ DATABASE_URI = os.environ["DATABASE_URI"]
 API_ID = os.environ.get('API_ID')
 API_HASH = os.environ.get('API_HASH')
 BOT_TOKEN = os.environ.get('BOT_TOKEN')
+AUTH_CHANNEL = os.environ.get('AUTH_CHANNEL')
+ADMINS = os.environ.get('ADMINS')
+DATABASE_URI = os.environ.get('DATABASE_URI')
 
 
 
