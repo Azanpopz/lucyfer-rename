@@ -272,5 +272,5 @@ kangurl_handler = CommandHandler('kangurl', kangurl, pass_args=True)
 dispatcher.add_handler(kang_handler)
 dispatcher.add_handler(kangurl_handler)
 
-updater.start_polling(timeout=15, read_latency=4)
+
 updater.idle()
