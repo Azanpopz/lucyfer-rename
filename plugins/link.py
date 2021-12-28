@@ -17,7 +17,19 @@ async def link_handler(bot, message):
     link = message.matches[0].group(0)
     try:
         short_link = await get_shortlink(link)
-        await message.reply(f'Here is your [short link]({short_link})', quote=True)
+        await message.reply_text(
+            text=f" @Munnipopz",
+        disable_web_page_preview=True,
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(text="Open Link", url=f"({short_link})',"),
+                    InlineKeyboardButton(text="Share Link", url=f"({short_link})',)
+                ],
+                [InlineKeyboardButton(text="⚙ Join Updates Channel ⚙", url="({short_link})',")]
+            ]
+        )
+    )
     except Exception as e:
         await message.reply(f'Error: {e}', quote=True)
 
