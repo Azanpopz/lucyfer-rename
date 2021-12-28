@@ -21,21 +21,7 @@ from telegram.utils.helpers import escape_markdown
 from telegram import Message, Chat, MessageEntity, InlineQueryResultArticle
 from os import path
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
-logger = logging.getLogger()
-
-def getConfig(name: str):
-    return os.environ[name]
-
-try:
-    BOT_TOKEN = getConfig('BOT_TOKEN')
-except KeyError as e:
-    LOGGER.error("BOT_TOKEN env variables missing! Exiting now")
-    exit(1)
-
-updater = telegram.ext.Updater(token=BOT_TOKEN)
-bot = updater.bot
-dispatcher = updater.dispatcher
+BOT_TOKEN = getConfig('BOT_TOKEN')
 
 
 @run_async
@@ -273,4 +259,4 @@ dispatcher.add_handler(kang_handler)
 dispatcher.add_handler(kangurl_handler)
 
 
-updater.idle()
+
