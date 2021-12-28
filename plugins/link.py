@@ -18,8 +18,7 @@ API_KEY = environ.get('API_KEY')
 async def link_handler(bot, message):
     link = message.matches[0].group(0)
     try:
-        short_link = await get_shortlink(link)
-        await message.reply(
+        short_link = await message.reply(f'Here is your [short link]({short_link})', quote=True)
         disable_web_page_preview=True,
         reply_markup=InlineKeyboardMarkup(
             [
