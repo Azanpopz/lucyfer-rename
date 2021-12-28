@@ -24,9 +24,9 @@ async def link_handler(bot, message):
             [
                 [
                     InlineKeyboardButton(text='Open Link', url=f'({short_link})', quote=True)
-                    InlineKeyboardButton(text="Share Link", url=f"telegram")
+                    InlineKeyboardButton(text='hare Link', url='telegram')
                 ],
-                [InlineKeyboardButton(text="⚙ Join Updates Channel ⚙", url="https://gggg.com")]
+                [InlineKeyboardButton(text='⚙ Join Updates Channel ⚙', url='https://gggg.com')]
             ]
         )
     except Exception as e:
