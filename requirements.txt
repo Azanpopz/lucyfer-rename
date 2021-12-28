@@ -26,3 +26,7 @@ pyromod
 python-decouple
 ytthumb
 youtube-search-python
+NumPy
+Pillow
+glitch_this
+opencv-python-headless
