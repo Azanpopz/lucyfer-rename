@@ -22,14 +22,9 @@ ADMINS = int(os.environ["ADMINS"])
 DATABASE_URL = os.environ["DATABASE_URL"]
 db = Database(DATABASE_URL, "FnTelegraphBot")
 
-API_ID = os.environ.get('API_ID')
-API_HASH = os.environ.get('API_HASH')
-BOT_TOKEN = os.environ.get('BOT_TOKEN')
-AUTH_CHANNEL = os.environ.get('AUTH_CHANNEL')
-ADMINS = os.environ.get('ADMINS')
-DATABASE_URL = os.environ.get('DATABASE_URL')
-
-
+BOT_TOKEN = os.environ["BOT_TOKEN"],
+API_ID = int(os.environ["API_ID"]),
+API_HASH = os.environ["API_HASH"],
 
 
 
