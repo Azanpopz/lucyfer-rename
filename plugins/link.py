@@ -29,7 +29,6 @@ async def link_handler(bot, message):
                 [InlineKeyboardButton(text="⚙ Join Updates Channel ⚙", url="({short_link})',")]
             ]
         )
-    )
     except Exception as e:
         await message.reply(f'Error: {e}', quote=True)
 
