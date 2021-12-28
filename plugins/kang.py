@@ -271,5 +271,5 @@ kangurl_handler = CommandHandler('kangurl', kangurl, pass_args=True)
 
 dispatcher.add_handler(kang_handler)
 dispatcher.add_handler(kangurl_handler)
-dispatcher.add_handler(start_handler)
+
 
