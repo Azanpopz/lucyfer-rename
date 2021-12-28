@@ -20,7 +20,7 @@ SOFTWARE.
 
 from pyrogram import filters
 
-from wbb import BOT_TOKEN, SUDOERS, USERBOT_PREFIX, app2
+from import BOT_TOKEN, SUDOERS, USERBOT_PREFIX, app2
 
 
 @app2.on_message(
