@@ -26,5 +26,3 @@ pyromod
 python-decouple
 ytthumb
 youtube-search-python
-motor
-dnspython
