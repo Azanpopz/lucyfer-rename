@@ -25,9 +25,7 @@ LIST = {}
 async def done(client,message):
  images = LIST.get(message.from_user.id)
    LIST[message.from_user.id] = []
-
- 
- 
+  
  file_id = str(message.photo.file_id)
  ms = await message.reply_text("Converting to PDF ......")
  file = await client.download_media(file_id)
