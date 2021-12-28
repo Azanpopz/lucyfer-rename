@@ -2,7 +2,7 @@
 
 import os
 import requests
-from info import API_KEY
+from inf import API_KEY
 
 def get_movie_info(movieTitle):
     url = 'http://www.omdbapi.com'
