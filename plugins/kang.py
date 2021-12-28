@@ -30,7 +30,9 @@ try:
 except KeyError as e:
     LOGGER.error("BOT_TOKEN env variables missing! Exiting now")
     exit(1)
-
+updater = telegram.ext.Updater(token=BOT_TOKEN)
+bot = updater.bot
+dispatcher = updater.dispatcher
 
 @run_async
 def kang(bot: Bot, update: Update, args: List[str]):
