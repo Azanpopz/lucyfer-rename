@@ -431,20 +431,22 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "help":
         buttons = [[
-            InlineKeyboardButton('🔗𝐓𝐄𝐋𝐄𝐆𝐑𝐀𝐏𝐇🔗', callback_data='telegraph'),
-            InlineKeyboardButton('🔗𝐒𝐎𝐍𝐆🔗', callback_data='song'),            
-            InlineKeyboardButton('🗂𝐑𝐌 𝐁𝐆🗂', callback_data='rmbg')
+            InlineKeyboardButton('🗂𝐁𝐀𝐓𝐂𝐇🗂', callback_data='batch'),
+            InlineKeyboardButton('🗂𝐅𝐈𝐋𝐓𝐄𝐑🗂', callback_data='filter')            
             ],[
-            InlineKeyboardButton('🔗𝐋𝐘𝐑𝐈𝐂𝐒🔗', callback_data='lyrics'),
-            InlineKeyboardButton('🔗𝐕𝐈𝐃𝐄𝐎🔗', callback_data='video'),            
+            InlineKeyboardButton('🗂𝐆𝐏𝐥𝐢𝐧𝐤🗂', callback_data='gplink'),
+            InlineKeyboardButton('🗂𝐋𝐘𝐑𝐈𝐂𝐒🗂', callback_data='lyrics')
+            ],[        
+            InlineKeyboardButton('🗂𝐑𝐌 𝐁𝐆🗂', callback_data='rmbg'),
             InlineKeyboardButton('🗂𝐒𝐎𝐍𝐆🗂', callback_data='song')
             ],[
-            InlineKeyboardButton('🔗𝐆𝐏𝐥𝐢𝐧𝐤🔗', callback_data='gplink'),
-            InlineKeyboardButton('🔗𝐓𝐑𝐀𝐍𝐒𝐋𝐀𝐓𝐈𝐎𝐍🔗', callback_data='translation'),            
-            InlineKeyboardButton('🗂𝐁𝐀𝐓𝐂𝐇🗂', callback_data='autofilter')
+            InlineKeyboardButton('🗂𝐓𝐄𝐋𝐄𝐆𝐑𝐀𝐏𝐇🗂', callback_data='telegraph'),            
+            InlineKeyboardButton('🗂𝐓𝐎𝐑𝐑𝐄𝐍𝐓🗂', callback_data='torrent')
             ],[
-            InlineKeyboardButton('🔗𝐓𝐎𝐑𝐑𝐄𝐍𝐓🔗', callback_data='torrent'),
-            InlineKeyboardButton('🔗𝐅𝐈𝐋𝐓𝐄𝐑🔗', callback_data='filter'),            
+            InlineKeyboardButton('🗂𝐓𝐑𝐀𝐍𝐒𝐋𝐀𝐓𝐈𝐎𝐍🗂', callback_data='translation'),            
+            InlineKeyboardButton('🗂𝐕𝐈𝐃𝐄𝐎🗂', callback_data='video')
+            ],[
+            InlineKeyboardButton('🗂𝐅𝐈𝐋𝐓𝐄𝐑🗂', callback_data='filter'),            
             InlineKeyboardButton('🗂𝐎𝐓𝐇𝐄𝐑𝐒🗂', callback_data='other')
             ],[
             InlineKeyboardButton('🏠𝐇𝐨𝐦𝐞🏠', callback_data='start'),
