@@ -24,7 +24,7 @@ LIST = {}
 @Client.on_message(filters.command(['convert']))
 async def done(client,message):
  images = LIST.get(message.from_user.id)
-   LIST[message.from_user.id] = []
+ LIST[message.from_user.id] = []
   
  file_id = str(message.photo.file_id)
  ms = await message.reply_text("Converting to PDF ......")
