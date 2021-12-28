@@ -5,6 +5,12 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 REMOVEBG_API = os.environ.get("REMOVEBG_API", "")
 UNSCREEN_API = os.environ.get("UNSCREEN_API", "")
+API_ID = os.environ.get('API_ID')
+API_HASH = os.environ.get('API_HASH')
+BOT_TOKEN = os.environ.get('BOT_TOKEN')
+API_ID = os.environ.get("API_ID","")
+API_HASH = os.environ.get("API_HASH","")
+BOT_TOKEN = os.environ.get("BOT_TOKEN","")
 
 
 @Client.on_message(filters.private & (filters.photo | filters.video | filters.document))
