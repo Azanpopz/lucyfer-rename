@@ -20,17 +20,18 @@ LIST = {}
 
 
 
-@Client.on_message(filters.photo & filters.command(['con']))
-async def con(client,message):
- if not isinstance(LIST.get(message.from_user.id), list):
+
+@Client.on_message(filters.command(['convert']))
+async def done(client,message):
+ images = LIST.get(message.from_user.id)
    LIST[message.from_user.id] = []
 
- return
+ 
  
  file_id = str(message.photo.file_id)
  ms = await message.reply_text("Converting to PDF ......")
  file = await client.download_media(file_id)
- return
+ 
  image = Image.open(file)
  img = image.convert('RGB')
  LIST[message.from_user.id].append(img)
