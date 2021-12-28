@@ -2,11 +2,11 @@
 
 import os
 import requests
-from inf import API_KEY
+from inf import API
 
 def get_movie_info(movieTitle):
     url = 'http://www.omdbapi.com'
-    api_key = API_KEY
+    api_key = API
     data = {'apikey':api_key,'t':movieTitle}
     response = requests.get(url,data).json()
 
