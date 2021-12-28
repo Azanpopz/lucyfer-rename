@@ -19,8 +19,7 @@ async def link_handler(bot, message):
     link = message.matches[0].group(0)
     try:
         short_link = await get_shortlink(link)
-        await message.reply_text(
-            text=f" @Munnipopz",
+        await message.reply(
         disable_web_page_preview=True,
         reply_markup=InlineKeyboardMarkup(
             [
