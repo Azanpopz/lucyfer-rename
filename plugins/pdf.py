@@ -38,8 +38,9 @@ async def pdf(client,message):
  await ms.edit(f"{len(LIST[message.from_user.id])} image   Successful created PDF if you want add more image Send me One by one\n\n **if done click here 👉 /convert** ")
  
 
-@Client.on_message(filters.command(['convert']))
-
+@app.on_message(filters.command(['convert']))
+async def done(client,message):
+ images = LIST.get(message.from_user.id)
 
  if isinstance(images, list):
   del LIST[message.from_user.id]
