@@ -24,7 +24,7 @@ async def link_handler(bot, message):
             [
                 [
                     InlineKeyboardButton(text="Open Link", url=f"({short_link})',"),
-                    InlineKeyboardButton(text="Share Link", url=f"({short_link})',)
+                    InlineKeyboardButton(text="Share Link", url=f"telegram")
                 ],
                 [InlineKeyboardButton(text="⚙ Join Updates Channel ⚙", url="({short_link})',")]
             ]
