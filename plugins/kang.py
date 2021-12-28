@@ -21,7 +21,7 @@ from telegram.utils.helpers import escape_markdown
 from telegram import Message, Chat, MessageEntity, InlineQueryResultArticle
 from os import path
 
-BOT_TOKEN = getConfig('BOT_TOKEN')
+BOT_TOKEN = environ.get('BOT_TOKEN')
 
 
 @run_async
