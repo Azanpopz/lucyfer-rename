@@ -47,7 +47,7 @@ from image.edit_5 import (  # pylint:disable=import-error
 )
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client
-from script import script  # pylint:disable=import-error
+from msg import script  # pylint:disable=import-error
 
 
 @Client.on_callback_query()
