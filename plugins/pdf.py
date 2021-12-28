@@ -21,8 +21,8 @@ LIST = {}
 
 
 @Client.on_message(filters.photo & filters.command(['con']))
-async def pdf(client,message):
- 
+async def con(client,message):
+  return
  if not isinstance(LIST.get(message.from_user.id), list):
    LIST[message.from_user.id] = []
 
