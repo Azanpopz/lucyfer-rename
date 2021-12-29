@@ -77,7 +77,7 @@ def main() -> None:
     dispatcher.add_handler(CommandHandler("helps", helps))
     dispatcher.add_handler(CommandHandler("help", help))
     dispatcher.add_handler(CommandHandler("info", info))
-    dispatcher.add_handler(MessageHandler(Filters.text & (~Filters.command), find))
+    dispatcher.add_handler(MessageHandler(Filters.text & (~Filters.command), torrent))
     updater.start_polling() #set bot to polling, if you use webhooks, replace this statement with the url of webhook.,
     updater.idle()
 
