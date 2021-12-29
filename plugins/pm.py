@@ -10,6 +10,14 @@ else:
     from config import Config
 
 
+
+class Config(object):
+    TG_BOT_TOKEN = os.environ.get("BOT_TOKEN")
+    APP_ID = int(os.environ.get("API_ID"))
+    API_HASH = os.environ.get("API_HASH")
+    ADMIN = int(os.environ.get("ADMIN"))
+
+
 @Client.on_message(filters.private & filters.text)
 async def pm_text(bot, message):
     if message.from_user.id == Config.ADMIN:
