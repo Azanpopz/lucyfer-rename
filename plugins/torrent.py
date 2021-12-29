@@ -27,8 +27,8 @@ a = None
 query = None
 
 
-@Client.on_message(filters.command(["/torrent"]))
-async def /torrent(_, message):
+@Client.on_message(filters.command(["torrent"]))
+async def torrent(_, message):
     global m
     global i
     global a
