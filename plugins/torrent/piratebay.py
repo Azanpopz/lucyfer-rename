@@ -5,6 +5,10 @@ from pyrogram import Client, filters, emoji
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 
+API_ID = os.environ.get('API_ID')
+API_HASH = os.environ.get('API_HASH')
+BOT_TOKEN = os.environ.get('BOT_TOKEN')
+
 
 
 
@@ -19,8 +23,8 @@ a = None
 query = None
 
 
-@Client.on_message(filters.command(["find"]))
-async def find(_, message):
+@Client.on_message(filters.command(["torrent"]))
+async def torrent(_, message):
     global m
     global i
     global a
