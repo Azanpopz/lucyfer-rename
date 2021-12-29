@@ -431,6 +431,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "help":
         buttons = [[
+            InlineKeyboardButton('🗂𝐈𝐧𝐥𝐢𝐧𝐞🗂', callback_data=inline')
             InlineKeyboardButton('🗂𝐁𝐚𝐭𝐜𝐡🗂', callback_data='batch'),
             InlineKeyboardButton('🗂𝐅𝐢𝐥𝐭𝐞𝐫🗂', callback_data='filter')            
             ],[
@@ -478,6 +479,28 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.TELEGRAPH_TXT.format(query.from_user.mention),
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+    elif query.data == "sticker":
+        buttons = [[
+            InlineKeyboardButton('🔻🔻𝐁𝐚𝐜𝐤🔻🔻', callback_data='help')
+            ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.STICKER_TXT.format(query.from_user.mention),
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+    elif query.data == "inline":
+        buttons = [[
+            InlineKeyboardButton('🔍𝐈𝐧𝐥𝐢𝐧𝐞 𝐒𝐞𝐚𝐫𝐜𝐡🔎', switch_inline_query_current_chat='')
+            ],[
+            InlineKeyboardButton('🔻🔻𝐁𝐚𝐜𝐤🔻🔻', callback_data='help')
+            ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.INLINE_TXT.format(query.from_user.mention),
             reply_markup=reply_markup,
             parse_mode='html'
         )
