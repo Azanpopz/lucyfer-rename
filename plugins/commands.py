@@ -100,7 +100,7 @@ async def start(client, message):
             f_caption = cap_args[i]
             if f_caption is None:
                 f_caption = ""
-            f_caption = f_caption + f"\n\n<code>┈•••✿</code> @UniversalFilmStudio <code>✿•••┈</code>"
+            f_caption = f_caption + f"\n\n<code>┈•••✿</code> @Nasrani_ChatGroup <code>✿•••┈</code>"
             i += 1
             try:
                 await client.send_cached_media(
@@ -121,7 +121,7 @@ async def start(client, message):
             except Exception as err:
                 return await message.reply(f"{str(err)}")
             await asyncio.sleep(1)
-        return await message.reply(f"<b><a href='https://t.me/UniversalFilmStudio'>Thank For Using Me...</a></b>")
+        return await message.reply(f"<b><a href='https://t.me/Nasrani_ChatGroup'>Thank For Using Me...</a></b>")
 
     files_ = await get_file_details(file_id)
     if not files_:
