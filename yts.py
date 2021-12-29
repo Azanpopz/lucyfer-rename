@@ -72,7 +72,7 @@ def info(update: Update, context: CallbackContext) -> None:
 
 #Add all handlers to the main function.
 def main() -> None:
-    updater = Updater(TOKEN, use_context=True)
+    updater = Updater(BOT_TOKEN, use_context=True)
     dispatcher = updater.dispatcher
     dispatcher.add_handler(CommandHandler("helps", helps))
     dispatcher.add_handler(CommandHandler("help", help))
