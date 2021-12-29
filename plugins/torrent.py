@@ -38,7 +38,7 @@ async def torrent(_, message):
     except:
         pass
     if len(message.command) < 2:
-        await message.reply_text("Usage: /find query")
+        await message.reply_text("/ᴛᴏʀʀᴇɴᴛ ᴀɴᴅ ᴛʏᴘᴇ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ")
         return
     query = message.text.split(None, 1)[1].replace(" ", "%20")
     m = await message.reply_text("Searching\nThis might take a while")
