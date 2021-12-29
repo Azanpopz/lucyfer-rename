@@ -20,7 +20,7 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
-TOKEN = "Your Token Here"
+BOT_TOKEN = "Your Token Here"
 
 #CommandHandler for message "about"
 def about(update: Update, context: CallbackContext) -> None:
@@ -35,7 +35,7 @@ def help(update: Update, context: CallbackContext) -> None:
 
 
 #CommandHandler to get torrents for the query
-def find(update: Update, context: CallbackContext) -> None:
+def torrent(update: Update, context: CallbackContext) -> None:
     try:
         update.message.reply_text("Searching results for 👉{}👈".format(update.message.text))
         #yts api
