@@ -702,6 +702,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
+    elif query.data == "start":
+        buttons = [[
+            InlineKeyboardButton('🎁🔺𝐌𝐄𝐍𝐔🔺🎁', callback_data='help')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.START_TXT,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
     elif query.data == "autofilter":
         buttons = [[
             InlineKeyboardButton('🔻𝐁𝐚𝐜𝐤🔻', callback_data='filter')
