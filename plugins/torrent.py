@@ -11,15 +11,15 @@ BOT_TOKEN = os.environ.get('BOT_TOKEN')
 
 
 
-@Client.on_message(filters.command(['helps']))
-async def helps(_, message):
-    await message.reply_text("Hello I'm iTorrent Torrent Scraper Bot\nSend /help To Show Help Screen\nBot by @unkusr")
-
-
-
 @Client.on_message(filters.command(['help']))
 async def help(_, message):
-    await message.reply_text("Example: /find titanic")
+    await message.reply_text("ʙᴏᴛ ʙʏ @ɴᴀꜱʀᴀɴɪ_ᴜᴘᴅᴀᴛᴇꜱ'")
+
+
+
+@Client.on_message(filters.command(['about']))
+async def about(_, message):
+    await message.reply_text("ʙᴏᴛ ʙʏ @ɴᴀꜱʀᴀɴɪ_ᴜᴘᴅᴀᴛᴇꜱ")
 
 m = None
 i = 0
@@ -27,8 +27,8 @@ a = None
 query = None
 
 
-@Client.on_message(filters.command(["find"]))
-async def find(_, message):
+@Client.on_message(filters.command(["/torrent"]))
+async def /torrent(_, message):
     global m
     global i
     global a
