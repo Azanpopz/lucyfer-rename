@@ -22,8 +22,8 @@ logger = logging.getLogger(__name__)
 
 TOKEN = "Your Token Here"
 
-#CommandHandler for message "helps"
-def helps(update: Update, context: CallbackContext) -> None:
+#CommandHandler for message "about"
+def about(update: Update, context: CallbackContext) -> None:
     update.message.reply_text(f"""*Hi {update.effective_chat.first_name},* 
 Welcome to the Torrent Searcher Bot. Here you will find all the torrents you search for :)
 Type /help to know how to use the bot
@@ -31,8 +31,7 @@ Type /info to know about the developer""", parse_mode=ParseMode.MARKDOWN)
 
 #CommandHandler for message "Help"
 def help(update: Update, context: CallbackContext) -> None:
-    update.message.reply_text("""Send me the query you want to search and i will do the rest!
-If any error occurs, feel free to pm me on https://t.me/unkusr""", parse_mode=ParseMode.MARKDOWN)
+    update.message.reply_text("""ʙᴏᴛ ʙʏ @ɴᴀꜱʀᴀɴɪ_ᴜᴘᴅᴀᴛᴇꜱ""", parse_mode=ParseMode.MARKDOWN)
 
 
 #CommandHandler to get torrents for the query
@@ -69,7 +68,7 @@ Watch Time {time}
 #CommandHnadler for message "info"
 def info(update: Update, context: CallbackContext) -> None:
     #Never Mind :-)
-    update.message.reply_text("""Bot by @unkusr""", parse_mode=ParseMode.MARKDOWN)
+    update.message.reply_text("""ʙᴏᴛ ʙʏ @ɴᴀꜱʀᴀɴɪ_ᴜᴘᴅᴀᴛᴇꜱ""", parse_mode=ParseMode.MARKDOWN)
 
 #Add all handlers to the main function.
 def main() -> None:
