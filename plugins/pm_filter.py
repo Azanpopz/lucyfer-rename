@@ -852,9 +852,6 @@ async def auto_filter(client, msg, spoll=False):
         btn.append(
             [InlineKeyboardButton(text="🗓 1/1",callback_data="pages")]
         )
-    btn.insert(0, [
-        InlineKeyboardButton("⚜ ɴᴇᴡ ᴍᴏᴠɪᴇs ⚜", url="https://t.me/bigmoviesworld")
-    ])
     imdb = await get_poster(search, file=(files[0]).file_name) if IMDB else None
     if imdb:
         cap = IMDB_TEMPLATE.format(
@@ -920,6 +917,9 @@ async def advantage_spell_chok(msg):
         await asyncio.sleep(8)
         await k.delete()
         return
+        await asyncio.sleep(8)
+        await k.delete()
+        return
     regex = re.compile(r".*(imdb|wikipedia).*", re.IGNORECASE) # look for imdb / wiki results
     gs = list(filter(regex.match, g_s))
     gs_parsed = [re.sub(r'\b(\-([a-zA-Z-\s])\-\simdb|(\-\s)?imdb|(\-\s)?wikipedia|\(|\)|\-|reviews|full|all|episode(s)?|film|movie|series)', '', i, flags=re.IGNORECASE) for i in gs]
@@ -960,7 +960,6 @@ async def advantage_spell_chok(msg):
                     )
                 )         
         
-        
 
                             
 
@@ -984,7 +983,7 @@ async def advantage_spell_chok(msg):
         sticker= "CAACAgUAAxkBAAJXA2GiaMWYAAEvGr39FQLCuU_qW4rH1AACHwADhq-BGkoDm80BdFrWIgQ",
         reply_markup=InlineKeyboardMarkup(btn))
     return k
-                         
+                                                
                         
         
     
