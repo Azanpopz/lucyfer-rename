@@ -917,10 +917,10 @@ async def advantage_spell_chok(msg):
     gs_parsed = []
     if not g_s:
         k = await msg.reply("നിങ്ങൾ ചോദിക്കുന്ന മൂവി ഇതിലുണ്ടോന്ന് ഉറപ്പ് വരുത്തുക.")
-        await asyncio.sleep(8)
+        await asyncio.sleep(60)
         await k.delete()
         return
-        await asyncio.sleep(8)
+        await asyncio.sleep(60)
         await k.delete()
         return
     regex = re.compile(r".*(imdb|wikipedia).*", re.IGNORECASE) # look for imdb / wiki results
@@ -958,6 +958,8 @@ async def advantage_spell_chok(msg):
                             [
                                 InlineKeyboardButton('🧩𝐆𝐨𝐨𝐠𝐥𝐞🧩', url="https://google.com"),
                                 InlineKeyboardButton('☘𝐈𝐦𝐝𝐛☘', url="https://imdb.com")
+                            [   
+                                InlineKeyboardButton('☘𝐑𝐞𝐩𝐨𝐫𝐭☘', url="https://t.me/KOCHU_KALLAN_RoBOT")       
                             ]                            
                         ]
                     )
@@ -979,7 +981,10 @@ async def advantage_spell_chok(msg):
     btn.append(
             [
                 InlineKeyboardButton("🔐𝐂𝐥𝐨𝐬𝐞🔐", callback_data=f'spolling#{user}#close_spellcheck'),
-                InlineKeyboardButton("☘𝐂𝐡𝐚𝐧𝐧𝐞𝐥☘", url='https://t.me/bigmoviesworld')       
+                InlineKeyboardButton("☘𝐂𝐡𝐚𝐧𝐧𝐞𝐥☘", url='https://t.me/bigmoviesworld')
+            ],
+            [   
+                InlineKeyboardButton('☘𝐑𝐞𝐩𝐨𝐫𝐭☘', url="https://t.me/KOCHU_KALLAN_RoBOT")       
             ],
         )  
     k = await msg.reply_sticker(
