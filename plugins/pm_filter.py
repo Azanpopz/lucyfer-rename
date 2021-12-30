@@ -813,14 +813,11 @@ async def auto_filter(client, msg, spoll=False):
     else:
         message = msg.message.reply_to_message # msg will be callback query
         search, files, offset, total_results = spoll
-    if not files:
-        return
-    
     if SINGLE_BUTTON:
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"[🔰{get_size(file.file_size)}] {file.file_name}🔰", callback_data=f'files#{file.file_id}'
+                    text=f"[📤{get_size(file.file_size)}] {file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
             ]
             for file in files
@@ -839,7 +836,6 @@ async def auto_filter(client, msg, spoll=False):
             ]
             for file in files
         ]
-
 
     if offset != "":
         key = f"{message.chat.id}-{message.message_id}"
@@ -889,18 +885,15 @@ async def auto_filter(client, msg, spoll=False):
         cap = f"Here is what i found for your query {search}"
     if imdb and imdb.get('poster'):
         try:
-            await message.reply_photo(                             
-            photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
+            await message.reply_photo(photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
-            poster = pic.replace('.jpg', "._V1_UX360.jpg")                                    
+            poster = pic.replace('.jpg', "._V1_UX360.jpg")
             await message.reply_photo(photo=poster, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
         except Exception as e:
             logger.exception(e)
             await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     else:
-        
-   
         await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     if spoll:
         await msg.message.delete()
@@ -983,8 +976,7 @@ async def advantage_spell_chok(msg):
         sticker= "CAACAgUAAxkBAAJXA2GiaMWYAAEvGr39FQLCuU_qW4rH1AACHwADhq-BGkoDm80BdFrWIgQ",
         reply_markup=InlineKeyboardMarkup(btn))
     return k
-                                                
-                        
+                                              
         
     
                     
