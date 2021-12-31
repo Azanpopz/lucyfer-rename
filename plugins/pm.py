@@ -9,16 +9,6 @@ if bool(os.environ.get("ENV", False)):
 else:
     from config import Config
 
-class Config(object):
-    BOT_TOKEN = os.environ.get("BOT_TOKEN")
-    API_ID = int(os.environ.get("API_ID"))
-    API_HASH = os.environ.get("API_HASH")
-    ADMIN = int(os.environ.get("ADMIN"))
-
-API_ID = os.environ.get('API_ID')
-API_HASH = os.environ.get('API_HASH')
-BOT_TOKEN = os.environ.get('BOT_TOKEN')
-ADMIN = int(os.environ.get('ADMIN')
 
 
 @Client.on_message(filters.private & filters.text)
