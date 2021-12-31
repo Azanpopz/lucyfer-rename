@@ -6,13 +6,16 @@ from presets import Presets
 if bool(os.environ.get("ENV", False)):
     from sample_config import Config
 else:
-    from config import Config
+from config import Config
+
+
+
 
 
 BOT_TOKEN = os.environ.get("BOT_TOKEN")
 API_ID = int(os.environ.get("API_ID"))
 API_HASH = os.environ.get("API_HASH")
-ADMINS = int(os.environ.get("ADMINS"))
+ADMINS = os.environ.get("ADMINS", "")
 
 @Client.on_message(filters.private & filters.text)
 async def pm_text(bot, message):
