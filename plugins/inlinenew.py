@@ -26,7 +26,7 @@ SOFTWARE.
 import traceback
 
 from import Bot
-from wbb.utils.inlinefuncs import *
+from plugins.helper_functions.inlinefuncs import *
 
 __MODULE__ = "Inline"
 __HELP__ = """See inline for help related to inline"""
