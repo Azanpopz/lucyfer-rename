@@ -3,7 +3,10 @@ import os
 
 from pyrogram import Client, filters
 from presets import Presets
-
+if bool(os.environ.get("ENV", False)):
+    from sample_config import Config
+else:
+    from config import Config
 
 
 BOT_TOKEN = os.environ.get("BOT_TOKEN")
