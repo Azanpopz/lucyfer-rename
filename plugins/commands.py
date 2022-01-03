@@ -103,7 +103,7 @@ async def start(client, message):
             f_caption = f_caption + f"\n\n<code>┈•••✿</code> @NasraniChatGroup <code>✿•••┈</code>"
             i += 1
             try:
-        k = await client.send_cached_media(
+                k = await client.send_cached_media(
                     chat_id=message.from_user.id,
                     file_id=b_file,
                     caption=f_caption,
