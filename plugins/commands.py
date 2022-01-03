@@ -120,7 +120,7 @@ async def start(client, message):
                 )
             except Exception as err:
                 return await message.reply(f"{str(err)}")
-            await asyncio.sleep(1)
+            await asyncio.sleep(30)
             await {str(err)}.delete()
         return await message.reply(f"<b><a href='https://t.me/NasraniChatGroup'>Thank For Using Me...</a></b>")
 
