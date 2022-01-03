@@ -118,7 +118,7 @@ async def start(client, message):
                         ]
                     )
                 )
-                await asyncio.sleep(20)
+                await asyncio.sleep(120)
                 await k.delete()
             except Exception as err:
                 return await message.reply(f"{str(err)}")
