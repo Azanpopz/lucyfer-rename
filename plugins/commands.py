@@ -120,7 +120,7 @@ async def start(client, message):
                 )
             except Exception as err:
                 return
-                   k = await message.reply(f"{str(err)}")
+                k = await message.reply(f"{str(err)}")
             await asyncio.sleep(1)
         return await message.reply(f"<b><a href='https://t.me/NasraniChatGroup'>Thank For Using Me...</a></b>")
 
