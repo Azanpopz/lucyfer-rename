@@ -123,6 +123,11 @@ async def start(client, message):
             await asyncio.sleep(1)
         return await message.reply(f"<b><a href='https://t.me/NasraniChatGroup'>Thank For Using Me...</a></b>")
 
+            await asyncio.sleep(8)
+        await temp_msg.delete()
+
+
+
     files_ = await get_file_details(file_id)
     if not files_:
         return await message.reply('No such file exist.')
