@@ -125,7 +125,7 @@ async def start(client, message):
         return await message.reply(f"<b><a href='https://t.me/NasraniChatGroup'>Thank For Using Me...</a></b>")
 
         await asyncio.sleep(30)      # sleep 30 second
-        await k.delete()
+        await get_batch.delete()
 
 
 
