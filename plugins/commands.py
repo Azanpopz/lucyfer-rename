@@ -103,7 +103,7 @@ async def start(client, message):
             f_caption = f_caption + f"\n\n<code>┈•••✿</code> @NasraniChatGroup <code>✿•••┈</code>"
             i += 1
             try:
-                k = await client.send_cached_media(
+                await client.send_cached_media(
                     chat_id=message.from_user.id,
                     file_id=b_file,
                     caption=f_caption,
@@ -123,8 +123,8 @@ async def start(client, message):
                 return await message.reply(f"{str(err)}")
             await asyncio.sleep(2)
         return await message.reply(f"<b><a href='https://t.me/NasraniChatGroup'>Thank For Using Me...</a></b>")
-        await asyncio.sleep(20)
-        await k.delete()
+            await asyncio.sleep(20)
+            await send_cached_media.delete()
         
         
 
