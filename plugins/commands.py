@@ -124,7 +124,7 @@ async def start(client, message):
             await asyncio.sleep(2)
         return await message.reply(f"<b><a href='https://t.me/NasraniChatGroup'>Thank For Using Me...</a></b>")
         await asyncio.sleep(20)
-        await send_cached_media.delete()
+        await client.send_cached_media.delete()
         
         
 
