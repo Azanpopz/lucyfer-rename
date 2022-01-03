@@ -94,8 +94,8 @@ async def start(client, message):
         file_args = f_id.split("#")
         cap_args = caption.split("#")
         i = 0
-        await asyncio.sleep(30)
-        await file_args.delete()
+        await asyncio.sleep(2)
+        await temp_msg.delete()
         for b_file in file_args:
             f_caption = cap_args[i]
             if f_caption is None:
@@ -103,7 +103,7 @@ async def start(client, message):
             f_caption = f_caption + f"\n\n<code>┈•••✿</code> @NasraniChatGroup <code>✿•••┈</code>"
             i += 1
             try:
-                await client.send_cached_media(
+            k = await client.send_cached_media(
                     chat_id=message.from_user.id,
                     file_id=b_file,
                     caption=f_caption,
@@ -118,6 +118,8 @@ async def start(client, message):
                         ]
                     )
                 )
+            await asyncio.sleep(20)
+            await k.delete()
             except Exception as err:
                 return await message.reply(f"{str(err)}")
             await asyncio.sleep(2)
