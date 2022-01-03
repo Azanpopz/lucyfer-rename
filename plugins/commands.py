@@ -94,8 +94,8 @@ async def start(client, message):
         file_args = f_id.split("#")
         cap_args = caption.split("#")
         i = 0
-        await asyncio.sleep(2)
-        await temp_msg.delete()
+        await asyncio.sleep(30)
+        await file_args.delete()
         for b_file in file_args:
             f_caption = cap_args[i]
             if f_caption is None:
@@ -119,13 +119,12 @@ async def start(client, message):
                     )
                 )
             except Exception as err:
-                return
-                k = await message.reply(f"{str(err)}")
-            
+                return await message.reply(f"{str(err)}")
+            await asyncio.sleep(2)
         return await message.reply(f"<b><a href='https://t.me/NasraniChatGroup'>Thank For Using Me...</a></b>")
 
-        await asyncio.sleep(30)
-        await {str(err)}.delete()
+        
+        
 
 
 
