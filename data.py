@@ -5,7 +5,7 @@ from config import Config
 
 DB_NAME = os.environ.get("DB_NAME", "NAZRIYASONG")
 
-class Database:
+class Datbase:
 
     def __init__(self):
         self._client = motor.motor_asyncio.AsyncIOMotorClient(Config.DATABASE)
