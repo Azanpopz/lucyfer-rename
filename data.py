@@ -8,7 +8,7 @@ DB_NAME = os.environ.get("DB_NAME", "NAZRIYASONG")
 class Datbase:
 
     def __init__(self):
-        self._client = motor.motor_asyncio.AsyncIOMotorClient(Config.DATABASE)
+        self._client = motor.motor_asyncio.AsyncIOMotorClient(Con.DATABASE)
         self.db = self._client[DB_NAME]
         self.dcol = self.db.users
         
