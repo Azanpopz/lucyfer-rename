@@ -29,7 +29,7 @@ Bot = Client(
     api_hash = os.environ["API_HASH"]
 )
 
-db = Database()
+db = Dtabase()
 
 
 
