@@ -32,21 +32,7 @@ from youtube_dl.utils import (
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery, InlineQuery, InputTextMessageContent
 
 
-class Config(object):
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
-
-    API_ID = int(os.environ.get("API_ID", 12345))
-
-    API_HASH = os.environ.get("API_HASH", "")   
-
-
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
-
-API_ID = int(os.environ.get("API_ID", 12345))
-
-API_HASH = os.environ.get("API_HASH", "")
-
-
+   
 
 API_ID = environ.get('API_ID')
 API_HASH = environ.get('API_HASH')
@@ -223,4 +209,75 @@ async def song(client, message):
                  caption=cap)  #JEBotZ
         await rkp.delete()
  
+
+
+
+                 duration=int(rip_data["duration"]),
+                 title=str(rip_data["title"]),
+                 performer=str(rip_data["uploader"]),
+                 thumb=lol,
+                 caption=cap)  #JEBotZ
+        await rkp.delete()
+ 
     
+@Client.on_message(filters.command("starts"))
+async def start(client, message):
+   if message.chat.type == 'private':
+       await Jebot.send_message(
+               chat_id=message.chat.id,
+               text="""<b>Hey There, I'm a Song Downloader Bot. A bot by @JEBotZ.
+
+Hit help button to find out more about how to use me</b>""",   
+                            reply_markup=InlineKeyboardMarkup(
+                                [[
+                                        InlineKeyboardButton(
+                                            "Help", callback_data="helps"),
+                                        InlineKeyboardButton(
+                                            "Channel", url="https://t.me/Infinity_BOTs")
+                                    ]]
+                            ),        
+            disable_web_page_preview=True,        
+            parse_mode="html",
+            reply_to_message_id=message.message_id
+        )
+   else:
+
+       await Jebot.send_message(
+               chat_id=message.chat.id,
+               text="""<b>Song Downloader Is Online.\n\n</b>""",   
+                            reply_markup=InlineKeyboardMarkup(
+                                [[
+                                        InlineKeyboardButton(
+                                            "Help", callback_data="helps")
+                                        
+                                    ]]
+                            ),        
+            disable_web_page_preview=True,        
+            parse_mode="html",
+            reply_to_message_id=message.message_id
+        )
+
+@Client.on_message(filters.command("helps"))
+async def helps(client, message):
+    if message.chat.type == 'private':   
+        await Jebot.send_message(
+               chat_id=message.chat.id,
+               text="""<b>Send a song name to download song
+
+@JEBotZ</b>""",
+            reply_to_message_id=message.message_id
+        )
+    else:
+        await Jebot.send_message(
+               chat_id=message.chat.id,
+               text="<b>Song Downloader Helps.\n\nSyntax: `/song guleba`</b>",
+            reply_to_message_id=message.message_id
+        )     
+        
+
+@Client.on_callback_query()
+async def button(Jebot, update):
+      cb_data = update.data
+      if "helps" in cb_data:
+        await update.message.delete()
+        await helps(Jebot, update.message)    
