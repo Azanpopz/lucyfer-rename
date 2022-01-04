@@ -12,6 +12,11 @@ class Config(object):
     API_HASH = os.environ.get("API_HASH")
     ADMINS = int(os.environ.get("ADMINS"))
 
+    DATABASE_URI = os.environ.get("DATABASE_URI")
+    ADMINS = set(int(x) for x in os.environ.get("ADMINS", "1961162381").split())
+    SUPPORTS= os.environ.get("SUPPORTS")
+    BOT_NAME = os.environ.get("bat")
+    BOT_USERNAME = os.environ.get("bn")
 
 
 
