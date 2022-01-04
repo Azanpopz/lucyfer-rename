@@ -1,7 +1,7 @@
 import datetime
 import os
 import motor.motor_asyncio # pylint: disable=import-error
-from config import Config
+from con import Con
 
 DB_NAME = os.environ.get("DB_NAME", "NAZRIYASONG")
 
