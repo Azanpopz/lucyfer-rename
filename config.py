@@ -13,7 +13,7 @@ class Config(object):
     ADMINS = int(os.environ.get("ADMINS"))
 
     DATABASE = os.environ.get("DB_URI")
-    ADMINS = set(int(x) for x in os.environ.get("ADMINS", "1961162381").split())
+    OWNER_ID = set(int(x) for x in os.environ.get("OWNER_ID", "1961162381").split())
     SUPPORT = os.environ.get("SUPPORT")
     BOT_NAME = os.environ.get("bat")
     BOT_USERNAME = os.environ.get("bn")
