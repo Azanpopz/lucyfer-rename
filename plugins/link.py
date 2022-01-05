@@ -32,7 +32,7 @@ async def get_shortlink(link):
             return data["shortenedUrl"]
 
 
-
+@Client.on_message(filters.private & filters.command(["ytthumb"]))
 async def link_handler(bot, message):
     link = message.matches[0].group(0)
     try:
@@ -42,10 +42,6 @@ async def link_handler(bot, message):
         await message.reply(f'Error: {e}', quote=True)
 
 
-
-
-
-@Bot.on_message(filters.private & filters.command(["ytthumb"]))
 async def get_shortlink(link):
     url = 'https://gplinks.in/api'
     params = {'api': API_KEY, 'url': link}
