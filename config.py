@@ -4,11 +4,19 @@ from youtube_dl import YoutubeDL
 
 
 #-------------------------------------- https://github.com/m4mallu/PMChatbot ------------------------------------------#
-class Config:
-    API_ID = "1778836"  # 🤖 Same As APP_ID. Get It From My.telegram.org.
-    API_HASH = "7bcf61fcd32b8652cd5876b02dcf57ae" # 🤖 Get It From My.telegram.org.
-    BOT_TOKEN = "2034622427:AAGzgpj4Viycp2rjB5TwgYdaYzfP3ImXSoA" # 🤖 Get It From @BotFather (Telegram) By Sending /newbot Command.
+import os
+import re
+from youtube_dl import YoutubeDL
 
+class Config:
+    API_ID = int(os.environ.get("API_ID", ""))
+    API_HASH = os.environ.get("API_HASH", "")
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
+    START_MSG = os.environ.get("START_MSG", "<b>Hi {},\nIam A Simple Youtube to Mp3 Downloader Bot,</b>\n\nSend me Any Songs name with /song command")
+    PICS = os.environ.get("PICS", "https://telegra.ph/file/2a35fca576aa49de77c98.jpg")
+    ADMINS = os.environ.get("ADMINS", "shamilhabeeb") 
+    DOWNLOAD_LOCATION = os.environ.get("DOWNLOAD_LOCATION", "./DOWNLOADS/")
+    msg = {}
 
 
 
