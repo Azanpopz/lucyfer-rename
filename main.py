@@ -379,7 +379,12 @@ async def button(bot, update):
         await update.message.delete()
         await start(bot, update.message)
 
-
+print(
+    """
+Bot Started!
+Join @JosProjects
+"""
+)
 
 
 
