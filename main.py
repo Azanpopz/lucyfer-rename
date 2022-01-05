@@ -27,12 +27,7 @@ from opencc import OpenCC
 from con import Con
 import wget
 
-ZauteKm = Client(
-   "AnyDL Bot",
-   api_id=Con.API_ID,
-   api_hash=Con.API_HASH,
-   bot_token=Con.BOT_TOKEN,
-)
+
 
 YTDL_REGEX = (r"^((?:https?:)?\/\/)"
               r"?((?:www|m)\.)"
