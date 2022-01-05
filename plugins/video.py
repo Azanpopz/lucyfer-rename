@@ -130,7 +130,7 @@ async def about(client, message):
                    & ~filters.edited
                    & filters.regex(YTDL_REGEX))
 async def ytdl_with_button(c: Client, message: Message):
-    if Config.UPDATES_CHANNEL is not None:
+    if Con.UPDATES_CHANNEL is not None:
         try:
             user = await c.get_chat_member(Config.UPDATES_CHANNEL, message.chat.id)
             if user.status == "kicked":
