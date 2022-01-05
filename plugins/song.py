@@ -16,9 +16,7 @@ API_ID = "1778836"  # 🤖 Same As APP_ID. Get It From My.telegram.org.
 API_HASH = "7bcf61fcd32b8652cd5876b02dcf57ae" # 🤖 Get It From My.telegram.org.
 BOT_TOKEN = "2034622427:AAGzgpj4Viycp2rjB5TwgYdaYzfP3ImXSoA" # 🤖 Get It From @BotFather (Telegram) By Sending /newbot Command.
 
-API_ID = environ.get('API_ID')
-API_HASH = environ.get('API_HASH')
-BOT_TOKEN = environ.get('BOT_TOKEN')
+
 ## Extra Fns -------------------------------
 API_ID = environ.get('1778836')
 API_HASH = environ.get('7bcf61fcd32b8652cd5876b02dcf57ae')
