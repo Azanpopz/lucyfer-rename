@@ -28,3 +28,20 @@ ytthumb
 youtube-search-python
 yt_dlp
 
+
+tgcrypto==1.2.2
+pymongo[srv]==3.11.4
+motor==2.4.0
+marshmallow==3.12.2
+umongo==3.0.0
+requests
+bs4
+imdbpy
+telegraph
+youtube_dl
+youtube_search_python
+youtube_search
+ffmpeg-python
+googletrans==3.1.0a0
+lyricsgenius
+gTTS
