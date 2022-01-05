@@ -40,7 +40,7 @@ API_KEY = environ.get('API_KEY')
 
 ZauteKm = Client(
    "AnyDL Bot",
-   api_id=Con.APP_ID,
+   api_id=Con.API_ID,
    api_hash=Con.API_HASH,
    bot_token=Con.BOT_TOKEN,
 )
