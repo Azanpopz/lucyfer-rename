@@ -137,7 +137,7 @@ async def about(client, message):
 async def ytdl_with_button(c: Client, message: Message):
     if Con.UPDATES_CHANNEL is not None:
         try:
-            user = await c.get_chat_member(Config.UPDATES_CHANNEL, message.chat.id)
+            user = await c.get_chat_member(Con.UPDATES_CHANNEL, message.chat.id)
             if user.status == "kicked":
                 await c.send_message(
                     chat_id=message.chat.id,
