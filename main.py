@@ -33,7 +33,12 @@ API_ID = int(os.environ.get("API_ID", 12345))
 
 API_HASH = os.environ.get("API_HASH", "")
 
-
+Bot = Client(
+   "AnyDL Bot",
+   api_id=Con.API_ID,
+   api_hash=Con.API_HASH,
+   bot_token=Con.BOT_TOKEN,
+)
 
 
 YTDL_REGEX = (r"^((?:https?:)?\/\/)"
