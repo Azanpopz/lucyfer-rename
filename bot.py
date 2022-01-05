@@ -1,13 +1,4 @@
-import os
-import asyncio
-from urllib.parse import urlparse
-from pyrogram.errors import UserNotParticipant, UserBannedInChannel
-from pyrogram import Client, filters
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
-from youtube_dl import YoutubeDL
-from opencc import OpenCC
-from con import Con
-import wget
+
     
 
 
@@ -47,19 +38,7 @@ BOT_TOKEN = environ.get('BOT_TOKEN')
 API_KEY = environ.get('API_KEY')
 
 
-Bot = Client(
-   "EvaMaria",
-   api_id=Con.API_ID,
-   api_hash=Con.API_HASH,
-   bot_token=Con.BOT_TOKEN,
-)
 
-YTDL_REGEX = (r"^((?:https?:)?\/\/)"
-              r"?((?:www|m)\.)"
-              r"?((?:youtube\.com|youtu\.be|xvideos\.com|pornhub\.com"
-              r"|xhamster\.com|xnxx\.com))"
-              r"(\/)([-a-zA-Z0-9()@:%_\+.~#?&//=]*)([\w\-]+)(\S+)?$")
-s2tw = OpenCC('s2tw.json').convert
 
 
 
