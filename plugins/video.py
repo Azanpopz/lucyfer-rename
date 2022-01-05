@@ -213,7 +213,7 @@ async def callback_query_ytdl_audio(_, callback_query):
     await callback_query.message.delete()
 
 
-if Config.AUDIO_THUMBNAIL == "No":
+if Con.AUDIO_THUMBNAIL == "No":
    async def send_audio(message: Message, info_dict, audio_file):
        basename = audio_file.rsplit(".", 1)[-2]
        # .webm -> .weba
@@ -246,7 +246,7 @@ else:
            os.rename(audio_file, audio_file_weba)
            audio_file = audio_file_weba
        # thumbnail
-       lol = Config.AUDIO_THUMBNAIL
+       lol = Con.AUDIO_THUMBNAIL
        thumbnail_file = wget.download(lol)
        # info (s2tw)
        webpage_url = info_dict['webpage_url']
@@ -291,7 +291,7 @@ async def callback_query_ytdl_video(_, callback_query):
     await callback_query.message.reply_to_message.delete()
     await callback_query.message.delete()
 
-if Config.VIDEO_THUMBNAIL == "No":
+if Con.VIDEO_THUMBNAIL == "No":
    async def send_video(message: Message, info_dict, video_file):
       basename = video_file.rsplit(".", 1)[-2]
       # thumbnail
@@ -316,7 +316,7 @@ else:
    async def send_video(message: Message, info_dict, video_file):
       basename = video_file.rsplit(".", 1)[-2]
       # thumbnail
-      lel = Config.VIDEO_THUMBNAIL
+      lel = Con.VIDEO_THUMBNAIL
       thumbnail_file = wget.download(lel)
       # info (s2tw)
       webpage_url = info_dict['webpage_url']
