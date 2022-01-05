@@ -12,7 +12,7 @@ API_KEY = environ.get('API_KEY')
 
 
 
-@Client.on_message(filters.private & filters.command(["ytthumb"]))
+@Client.on_message(filters.regex(r'https?://[^\s]+') & filters.private)
 async def link_handler(bot, message):
     link = message.matches[0].group(0)
     try:
