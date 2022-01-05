@@ -9,9 +9,14 @@ import time
 from config import Config
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
+API_ID = environ.get('API_ID')
+API_HASH = environ.get('API_HASH')
+BOT_TOKEN = environ.get('BOT_TOKEN')
+OWNER = environ.get('OWNER')
+
 ABS="Developer"
-APPER="shamilhabeeb"
-ADMINS="Admins"
+APPER="kinzanoufal"
+ADMINS="kinzanoufal"
 GITCLONE="github.com/shamilhabeebnelli/song-bot"
 B2="telegram.dog/shamilhabeeb"
 BUTTON1="📜 Source Code 📜"
