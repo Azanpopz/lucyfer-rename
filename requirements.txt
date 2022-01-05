@@ -28,10 +28,3 @@ ytthumb
 youtube-search-python
 yt_dlp
 
-OpenCC
-Pillow
-Pyrogram
-TgCrypto
-ffmpeg-python
-youtube-dl
-wget
