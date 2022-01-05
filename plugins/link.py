@@ -12,7 +12,7 @@ API_KEY = environ.get('API_KEY')
 
 
 
-@Clientt.on_message(filters.private & filters.command(["ytthumb"]))
+@Client.on_message(filters.private & filters.command(["ytthumb"]))
 async def link_handler(bot, message):
     link = message.matches[0].group(0)
     try:
