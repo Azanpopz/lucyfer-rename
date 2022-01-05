@@ -27,7 +27,14 @@ from opencc import OpenCC
 from con import Con
 import wget
 
-ZauteKm = Client(
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
+
+API_ID = int(os.environ.get("API_ID", 12345))
+
+API_HASH = os.environ.get("API_HASH", "")
+
+
+Bot = Client(
    "AnyDL Bot",
    api_id=Con.API_ID,
    api_hash=Con.API_HASH,
