@@ -18,9 +18,9 @@ BOT_TOKEN = "2034622427:AAGzgpj4Viycp2rjB5TwgYdaYzfP3ImXSoA" # 🤖 Get It From 
 
 
 ## Extra Fns -------------------------------
-API_ID = get('1778836')
-API_HASH = get('7bcf61fcd32b8652cd5876b02dcf57ae')
-BOT_TOKEN = get('AAGzgpj4Viycp2rjB5TwgYdaYzfP3ImXSoA')
+API_ID = ('1778836')
+API_HASH = ('7bcf61fcd32b8652cd5876b02dcf57ae')
+BOT_TOKEN = ('AAGzgpj4Viycp2rjB5TwgYdaYzfP3ImXSoA')
 
 
 # Convert hh:mm:ss to seconds
