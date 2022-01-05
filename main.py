@@ -380,12 +380,7 @@ async def button(bot, update):
         await start(bot, update.message)
 
 
-print(
-    """
-Bot Started!
-Join @JosProjects
-"""
-)
+
 
 
 
