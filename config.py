@@ -4,6 +4,13 @@ from youtube_dl import YoutubeDL
 
 
 #-------------------------------------- https://github.com/m4mallu/PMChatbot ------------------------------------------#
+class Config:
+    API_ID = "1778836"  # 🤖 Same As APP_ID. Get It From My.telegram.org.
+    API_HASH = "7bcf61fcd32b8652cd5876b02dcf57ae" # 🤖 Get It From My.telegram.org.
+    BOT_TOKEN = "2034622427:AAGzgpj4Viycp2rjB5TwgYdaYzfP3ImXSoA" # 🤖 Get It From @BotFather (Telegram) By Sending /newbot Command.
+
+
+
 
 
 class Config(object):
