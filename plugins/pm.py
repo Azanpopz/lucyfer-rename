@@ -6,13 +6,13 @@ from info import CHANNELS, ADMIN, AUTH_CHANNEL, CUSTOM_FILE_CAPTION, LOG_CHANNEL
 
 
 @Client.on_message(filters.private & filters.text)
-async def pm_text(bot, message):
+async def pm_text(client: Client, message):
     if message.from_user.id in ADMIN:
-        await reply_text(bot, message)
+        await reply_text(client, message)
         return
-    info = await bot.get_users(user_ids=message.from_user.id)
+    info = await client.get_users(user_ids=message.from_user.id)
     reference_id = int(message.chat.id)
-    await bot.send_message(
+    await client.send_message(
         chat_id=ADMIN,
         text=script.PM_TXT_ATT.format(reference_id, info.first_name, message.text),
         parse_mode="html"
@@ -36,7 +36,7 @@ async def pm_text(bot, message):
 
 
 @Client.on_message(filters.user(ADMIN) & filters.text)
-async def reply_text(bot, message):
+async def reply_text(client: Client, message):
     reference_id = True
     if message.reply_to_message is not None:
         file = message.reply_to_message
@@ -48,14 +48,14 @@ async def reply_text(bot, message):
             reference_id = file.caption.split()[2]
         except Exception:
             pass
-        await bot.send_message(
+        await client.send_message(
             text=message.text,
             chat_id=int(reference_id)
         )
 
 
 @Client.on_message(filters.user(ADMIN) & filters.media)
-async def replay_media(bot, message):
+async def replay_media(client: Client, message):
     reference_id = True
     if message.reply_to_message is not None:
         file = message.reply_to_message
@@ -67,7 +67,7 @@ async def replay_media(bot, message):
             reference_id = file.caption.split()[2]
         except Exception:
             pass
-        await bot.copy_message(
+        await client.copy_message(
             chat_id=int(reference_id),
             from_chat_id=message.chat.id,
             message_id=message.message_id,
