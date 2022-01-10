@@ -41,7 +41,7 @@ async def pm_text(client: Client, message):
 #     )
 
 
-@Client.on_message(filters.private & filters.user(ADMIN) & filters.text)
+@Client.on_message(filters.private & filters.user(ADMIN) & filters.text & filters.reply)
 async def reply_text(client: Client, message):
     try:
         reference_id = True
@@ -63,7 +63,7 @@ async def reply_text(client: Client, message):
         logger.exception(e)
 
 
-@Client.on_message(filters.private & filters.user(ADMIN) & filters.media)
+@Client.on_message(filters.private & filters.user(ADMIN) & filters.media & filters.reply)
 async def replay_media(client: Client, message):
     try:
         reference_id = True
