@@ -2,18 +2,18 @@ import os
 
 from pyrogram import Client, filters
 from Script import script
-from info import CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION, LOG_CHANNEL, STC
+from info import CHANNELS, ADMIN, AUTH_CHANNEL, CUSTOM_FILE_CAPTION, LOG_CHANNEL, STC
 
 
 @Client.on_message(filters.private & filters.text)
 async def pm_text(bot, message):
-    if message.from_user.id in ADMINS:
+    if message.from_user.id in ADMIN:
         await reply_text(bot, message)
         return
     info = await bot.get_users(user_ids=message.from_user.id)
     reference_id = int(message.chat.id)
     await bot.send_message(
-        chat_id=ADMINS,
+        chat_id=ADMIN,
         text=script.PM_TXT_ATT.format(reference_id, info.first_name, message.text),
         parse_mode="html"
     )
@@ -35,7 +35,7 @@ async def pm_text(bot, message):
 #     )
 
 
-@Client.on_message(filters.user(ADMINS) & filters.text)
+@Client.on_message(filters.user(ADMIN) & filters.text)
 async def reply_text(bot, message):
     reference_id = True
     if message.reply_to_message is not None:
@@ -54,7 +54,7 @@ async def reply_text(bot, message):
         )
 
 
-@Client.on_message(filters.user(ADMINS) & filters.media)
+@Client.on_message(filters.user(ADMIN) & filters.media)
 async def replay_media(bot, message):
     reference_id = True
     if message.reply_to_message is not None:

@@ -14,7 +14,7 @@ from pyrogram.errors.exceptions.bad_request_400 import ChatAdminRequired
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from database.ia_filterdb import Media, get_file_details, unpack_new_file_id
 from database.users_chats_db import db
-from info import CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION, LOG_CHANNEL, STC
+from info import CHANNELS, ADMINS, ADMIN, AUTH_CHANNEL, CUSTOM_FILE_CAPTION, LOG_CHANNEL, STC
 from utils import get_size, is_subscribed, temp
 import re
 logger = logging.getLogger(__name__)
@@ -79,7 +79,7 @@ async def start(client, message):
             InlineKeyboardButton('😊𝐀𝐛𝐨𝐮𝐭😊', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        if message.from_user.id in ADMINS:
+        if message.from_user.id == ADMIN:
             await message.reply_sticker(
                 sticker=random.choice(STC),
                 reply_markup=reply_markup,
@@ -93,7 +93,7 @@ async def start(client, message):
             reply_markup=reply_markup,
         )
         await client.send_message(
-            chat_id=ADMINS,
+            chat_id=ADMIN,
             text=script.USER_DETAILS.format(
                 info.first_name,
                 info.last_name,
