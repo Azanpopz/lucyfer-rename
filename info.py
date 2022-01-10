@@ -33,10 +33,8 @@ VID = (environ.get('VID', 'https://telegra.ph/file/ec5404d035924f1113d8d.mp4 htt
 STC = (environ.get('STC', 'CAACAgUAAxkBAAJZx2GmgIDTGt76axsHrqMc88lPnTnOAAI0AQACYAc4Vv6FZnD1aIBBIgQ CAACAgUAAxkBAAJZzmGmgSXQtnPL2SuZGotDG9WhatdiAAIcAAOrVoo-AAGoXa27QtzjIgQ CAACAgUAAxkBAAJZz2GmgWgXsbLqASXxMDp3H3dKLvyMAAITAAOGr4EaOMMWS3tMWH0iBA')).split()
 
 
-
-
 # Admins, Channels & Users
-ADMIN = environ.get('ADMINS')
+ADMIN = int(environ.get('ADMINS'))
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '').split()]
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '0').split()]
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
