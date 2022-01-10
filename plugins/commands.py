@@ -74,16 +74,47 @@ async def start(client, message):
             )
         return
     if len(message.command) ==2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
-        buttons = [[            
+        buttons = [[
             InlineKeyboardButton('🕵️𝐇𝐞𝐥𝐩🕵️', callback_data='help'),
             InlineKeyboardButton('😊𝐀𝐛𝐨𝐮𝐭😊', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply_sticker(
-            sticker=random.choice(STC),
+        if message.from_user.id in ADMINS:
+            await message.reply_sticker(
+                sticker=random.choice(STC),
+                reply_markup=reply_markup,
+
+            )
+            return
+        info = await client.get_users(user_ids=message.from_user.id)
+        await message.reply(
+            chat_id=message.chat.id,
+            text=script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
-            
         )
+        await client.send_message(
+            chat_id=ADMINS,
+            text=script.USER_DETAILS.format(
+                info.first_name,
+                info.last_name,
+                info.id, info.username,
+                info.is_scam,
+                info.is_restricted,
+                info.status,
+                info.dc_id
+            )
+        )
+
+        # buttons = [[
+        #     InlineKeyboardButton('🕵️𝐇𝐞𝐥𝐩🕵️', callback_data='help'),
+        #     InlineKeyboardButton('😊𝐀𝐛𝐨𝐮𝐭😊', callback_data='about')
+        # ]]
+        # reply_markup = InlineKeyboardMarkup(buttons)
+        # await message.reply_sticker(
+        #     sticker=random.choice(STC),
+        #     reply_markup=reply_markup,
+        #
+        # )
         return
     file_id = message.command[1]
     print(file_id)
