@@ -167,7 +167,7 @@ async def advantage_spoll_choker(bot, query):
         k = (movie, files, offset, total_results)
         await auto_filter(bot, query, k)
     else:
-        k = await message.reply_sticker(
+        k = await msg.reply_sticker(
         sticker= "CAACAgUAAxkBAAEDRCxh3xBqAAFPNz8SItysh5SfxWSI3NQAAjIAA-EAAQEbp3x8WzswNL0eBA",
         caption=f"<b>📍നിങ്ങൾ ചോദിച്ച മൂവീസ് കിട്ടാതിരിക്കാനുള്ള കാരണങ്ങൾ \n DVD ഇറങ്ങിയിട്ടുണ്ടാകില്ല \n നിങ്ങൾ ചോദിച്ച മൂവീസ് തെറ്റായിരിക്കും \n അല്ലെങ്കിൽ ഞങ്ങളുടെ ഡാറ്റാബേസിൽ ഇല്ലായിരിക്കും </b>",
         parse_mode="html",
