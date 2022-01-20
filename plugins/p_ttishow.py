@@ -64,7 +64,7 @@ async def save_group(bot, message):
                 except:
                     pass
             temp.MELCOW['welcome'] = await message.reply_sticker(
-                                                                sticker=random.choice(VID),
+                                                                video=random.choice(VID),
                                                                 caption=f"<b>{u.mention}, 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐓𝐨 {message.chat.title} \n ഗ്രൂപ്പിൽ ഡിവിഡി ഇറങ്ങിയ മൂവീസ് മാത്രമേ കിട്ടുകയുള്ളു.. മൂവി ചോദിക്കുമ്പോൾ ഇംഗ്ലീഷിൽ സ്പെല്ലിങ് തെറ്റാതെ അയക്കുക..😌 </b>",
                                                                 reply_markup=reply_markup,
                                                                 parse_mode='html'
