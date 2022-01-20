@@ -70,7 +70,7 @@ async def save_group(bot, message):
                                                                 parse_mode='html'
                                                                )
             
-        await asyncio.sleep(180)      # sleep 180 second
+        await asyncio.sleep(60)      # sleep 60 second
         await (temp.MELCOW['welcome']).delete()
 
 
