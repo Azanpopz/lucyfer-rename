@@ -1,3 +1,4 @@
+
 import random
 import asyncio
 
@@ -63,16 +64,15 @@ async def save_group(bot, message):
                     await (temp.MELCOW['welcome']).delete()
                 except:
                     pass
-            temp.MELCOW['welcome'] = await message.reply_sticker(
+            temp.MELCOW['welcome'] = await message.reply_video(
                                                                 video=random.choice(VID),
-                                                                caption=f"<b>{u.mention}, 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐓𝐨 {message.chat.title} \n ഗ്രൂപ്പിൽ ഡിവിഡി ഇറങ്ങിയ മൂവീസ് മാത്രമേ കിട്ടുകയുള്ളു.. മൂവി ചോദിക്കുമ്പോൾ ഇംഗ്ലീഷിൽ സ്പെല്ലിങ് തെറ്റാതെ അയക്കുക..😌 </b>",
+                                                                caption=f"<b>{u.mention}, 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐓𝐨 {message.chat.title} \n താങ്കൾക്ക് സിനിമ എടുക്കാൻ അറിയില്ലെങ്കിൽ മുകളിലെ വീഡിയോ കണ്ട് അത് പോലെ ചെയ്യുക😌 </b>",
                                                                 reply_markup=reply_markup,
                                                                 parse_mode='html'
                                                                )
             
-        await asyncio.sleep(60)      # sleep 60 second
+        await asyncio.sleep(30)      # sleep 30 second
         await (temp.MELCOW['welcome']).delete()
-
 
 
 
