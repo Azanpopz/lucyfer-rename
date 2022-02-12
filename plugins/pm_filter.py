@@ -851,7 +851,7 @@ async def auto_filter(client, msg, spoll=False):
     btn.insert(0, [
         InlineKeyboardButton("⚜ ɴᴇᴡ ᴍᴏᴠɪᴇs ⚜", url="https://t.me/nasrani_update")
     ])
-    buttons.append(
+        buttons.append(
                     [
                         InlineKeyboardButton(
                             text=f"{title}{act}", callback_data=f"groupcb:{groupid}:{title}:{act}"
