@@ -854,7 +854,7 @@ async def auto_filter(client, msg, spoll=False):
     buttons.append(
                     [
                         InlineKeyboardButton(
-                            text=f"{title}{act}", callback_data=f"groupcb:{groupid}:{title}:{act}"
+                            text=f"{title}", callback_data=f"{title}"
                         )
                     ]
                 )
