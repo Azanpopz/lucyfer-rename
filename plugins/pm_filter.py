@@ -849,10 +849,10 @@ async def auto_filter(client, msg, spoll=False):
             [InlineKeyboardButton(text="🗓 1/1",callback_data="pages")]
         )
     btn.insert(0, [
-        InlineKeyboardButton("⚜ ɴᴇᴡ ᴍᴏᴠɪᴇs ⚜", url="https://t.me/nasrani_update")
+        InlineKeyboardButton(text=f"⚜ ɴᴇᴡ ᴍᴏᴠɪᴇs ⚜", url=f"https://t.me/nasrani_update")
     ])
     btn.append(
-            [InlineKeyboardButton(text=f"🥰", callback_data=f"😂😂😂"
+            [InlineKeyboardButton(text=f"🥰", callback_data=f"😂😂😂")
         )
         
     imdb = await get_poster(search, file=(files[0]).file_name) if IMDB else None
