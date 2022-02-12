@@ -854,10 +854,17 @@ async def auto_filter(client, msg, spoll=False):
     buttons.append(
                     [
                         InlineKeyboardButton(
-                            text=f"{title}", callback_data=f"{title}"
+                            text=f"{title}{act}", callback_data=f"groupcb:{groupid}:{title}:{act}"
                         )
                     ]
                 )
+            except:
+                pass
+        if buttons:
+            await query.message.edit_text(
+                "Your connected group details ;\n\n",
+                reply_markup=InlineKeyboardMarkup(buttons)
+            )
     imdb = await get_poster(search, file=(files[0]).file_name) if IMDB else None
     if imdb:
         cap = IMDB_TEMPLATE.format(
