@@ -841,7 +841,7 @@ async def auto_filter(client, msg, spoll=False):
         key = f"{message.chat.id}-{message.message_id}"
         BUTTONS[key] = search
         req = message.from_user.id if message.from_user else 0
-        btn.insert(0,
+        btn.append
             [InlineKeyboardButton(text=f"🗓 1/{round(int(total_results)/10)}",callback_data="pages"), InlineKeyboardButton(text="🔺𝐍𝐞𝐱𝐭🔺",callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
@@ -851,20 +851,10 @@ async def auto_filter(client, msg, spoll=False):
     btn.insert(0, [
         InlineKeyboardButton("⚜ ɴᴇᴡ ᴍᴏᴠɪᴇs ⚜", url="https://t.me/nasrani_update")
     ])
-        buttons.append(
-                    [
-                        InlineKeyboardButton(
-                            text=f"{title}{act}", callback_data=f"groupcb:{groupid}:{title}:{act}"
-                        )
-                    ]
-                )
-            except:
-                pass
-        if buttons:
-            await query.message.edit_text(
-                "Your connected group details ;\n\n",
-                reply_markup=InlineKeyboardMarkup(buttons)
-            )
+    btn.insert(0, [
+        ("⚜ ɴᴇᴡ ᴍᴏᴠɪᴇs ⚜", url="https://t.me/nasrani_update")
+    ])
+        
     imdb = await get_poster(search, file=(files[0]).file_name) if IMDB else None
     if imdb:
         cap = IMDB_TEMPLATE.format(
