@@ -144,7 +144,7 @@ async def start(client, message):
                         [
                             [
                                 InlineKeyboardButton(
-                                    '🎭 ⭕️ ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ ⭕️', url="f"https://t.me/{temp.U_NAME}?start={str(err)}"
+                                    '🎭 ⭕️ ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ ⭕️', url="f"https://t.me/{temp.U_NAME}?start=(file_id)"
                                 )
                             ]
                         ]
