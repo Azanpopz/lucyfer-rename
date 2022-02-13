@@ -135,7 +135,7 @@ async def start(client, message):
             f_caption = f_caption + f"\n\n<code>┈•••✿</code> ⚠️  കോപ്പി റൈറ്റ് വരുന്നത് കൊണ്ട് ഇവിടെ വരുന്ന ഫയലുകൾ എല്ലാം 1 മിനിറ്റ് കൊണ്ട് ഇവിടെ നിന്നും ഓട്ടോമാറ്റിക്കായി ഡിലേറ്റാവും...!!! ഇവിടെ നിന്നും വേറെ എവിടേലും മാറ്റിയതിന് ശേഷം ഡൗൺലോഡ് ചെയ്യുക...!!! FILES FORWARD TO YOUR SAVED MESSAGES All files here Gets Deleted With in 30 seconds <code>✿•••┈</code>"
             i += 1
             try:
-                    await message.reply(f"😁")
+                    await message.reply(f"FILE :  <code >{file_name} </code> /n Size :  {file_size}")
                     k = await client.send_cached_media(
                     chat_id=message.from_user.id,
                     file_id=b_file,
