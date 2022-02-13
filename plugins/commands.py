@@ -200,6 +200,8 @@ async def start(client, message):
         reply_markup=InlineKeyboardMarkup(buttons),
         parse_mode="html"
         )
+        return await message.reply(f"<b><a href='https://t.me/NasraniChatGroup'>Thank For Using Me...</a></b>")
+        
        
         
         
