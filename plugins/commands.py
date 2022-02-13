@@ -144,7 +144,7 @@ async def start(client, message):
                         [
                             [
                                 InlineKeyboardButton(
-                                    '🎭 ⭕️ ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ ⭕️', url=f"https://telegram.me/share/url?url={link}")]])
+                                    '🎭 ⭕️ ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ ⭕️', url=f"https://telegram.me/share/url?url={link}")'
                                 )
                             ]
                         ]
