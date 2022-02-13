@@ -156,7 +156,7 @@ async def start(client, message):
                 return await message.reply(f"{str(err)}")
             await asyncio.sleep(2)
         return await message.reply(f"<b><a href='https://t.me/NasraniChatGroup'>Thank For Using Me...</a></b>")
-            await asyncio.sleep(120)
+            await asyncio.sleep(10)
             await k.delete()
 
 
