@@ -144,7 +144,7 @@ async def start(client, message):
                         [
                             [
                                 InlineKeyboardButton(
-                                    '🎭 ⭕️ ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ ⭕️', url=f'https://t.me/{temp.U_NAME}?start={str(err)}'
+                                    '🎭 ⭕️ ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ ⭕️', url=f'https://t.me/mazhatthullikal'
                                 )
                             ]
                         ]
@@ -154,9 +154,9 @@ async def start(client, message):
          
             except Exception as err:
                 return
-            k = await message.reply(f"{str(err)}")
+            p = await message.reply(f"{str(err)}")
             await asyncio.sleep(30)
-            await k.delete()
+            await p.delete()
         return await message.reply(f"<b><a href='https://t.me/NasraniChatGroup'>Thank For Using Me...</a></b>")
         
 
