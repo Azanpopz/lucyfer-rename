@@ -193,7 +193,7 @@ async def start(client, message):
                   
                     ]
                     ]
-    await client.send_cached_media(
+        k = await client.send_cached_media(
         chat_id=message.from_user.id,
         file_id=file_id,
         caption=f_caption,
@@ -202,7 +202,7 @@ async def start(client, message):
         )
     await message.reply(f"<b><a href='https://t.me/NasraniChatGroup'>Thank For Using Me...</a></b>")
     await asyncio.sleep(10)
-    await file_id.delete()   
+    await k.delete()   
        
         
         
