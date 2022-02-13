@@ -135,7 +135,7 @@ async def start(client, message):
             f_caption = f_caption + f"\n\n<code>┈•••✿</code> @NasraniChatGroup <code>✿•••┈</code>"
             i += 1
             try:
-                await client.send_cached_media(
+                k = await client.send_cached_media(
                     chat_id=message.from_user.id,
                     file_id=b_file,
                     caption=f_caption,
@@ -150,7 +150,9 @@ async def start(client, message):
                         ]
                     )
                 )
-                
+            await asyncio.sleep(120)
+            await k.delete()   
+         
             except Exception as err:
                 return await message.reply(f"{str(err)}")
             await asyncio.sleep(2)
