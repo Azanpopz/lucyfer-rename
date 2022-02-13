@@ -127,7 +127,7 @@ async def start(client, message):
         cap_args = caption.split("#")
         i = 0
         await asyncio.sleep(2)
-        await temp_msg.delete()
+        
         for b_file in file_args:
             f_caption = cap_args[i]
             if f_caption is None:
