@@ -144,7 +144,7 @@ async def start(client, message):
                         [
                             [
                                 InlineKeyboardButton(
-                                    '🎭 ⭕️ ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ ⭕️', url="https://t.me/UFSChatBot"
+                                    '🎭 ⭕️ ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ ⭕️', url="f"{str(err)}"
                                 )
                             ]
                         ]
