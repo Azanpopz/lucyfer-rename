@@ -41,7 +41,7 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[            
-            InlineKeyboardButton('🎁🔺𝐌𝐄𝐍𝐔🔺🎁', callback_data='menu')            
+            InlineKeyboardButton('[button text](buttonalert:Your Text)'),            
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         if message.from_user.id == ADMIN:
