@@ -25,7 +25,7 @@ async def start(client, message):
     if message.chat.type in ['group', 'supergroup']:
         buttons = [            
             [
-                InlineKeyboardButton('🎁🔺𝐌𝐄𝐍𝐔🔺🎁', url=f"https://t.me/{temp.U_NAME}?start=menu"),
+                InlineKeyboardButton('[button text](buttonalert:Your Text)"),
             ]
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
