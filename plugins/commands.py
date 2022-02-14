@@ -206,8 +206,8 @@ async def start(client, message):
         )
     await message.reply(f"<b><a href='https://t.me/NasraniChatGroup'>Thank For Using Me...</a></b>")
     await asyncio.sleep(120)
-    await k.delete()   
-        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Text", "alert")]])
+    await k.delete()  
+reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Text", "alert")]])
    
 @client.on_callback_query(filters.regex("alert"))
 async def alert(client, query):
