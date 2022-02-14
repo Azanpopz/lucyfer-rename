@@ -944,6 +944,8 @@ async def advantage_spell_chok(msg):
         parse_mode="html",
         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Text", "alert")]])
         )
+async def alert(client, query):
+    await query.answer("Save file your storage", show_alert=True)   
                             
 
         await asyncio.sleep(60)
