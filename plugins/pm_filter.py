@@ -941,8 +941,20 @@ async def advantage_spell_chok(msg):
         k = await msg.reply_video(
         video= "https://telegra.ph/file/ec5404d035924f1113d8d.mp4",
         caption=f"<b>📍Hello:-നിങ്ങൾ ചോദിച്ച മൂവി വേണമെങ്കിൽ മുകളിലെ വീഡിയോ കണ്ട് അത് പോലെ സ്പെല്ലിങ് തെറ്റാതെ അയക്കുക.😌</b>",
-        reply_markup=InlineKeyboardMatkup([[InlineKeyboardButton("Text", "alert")]])
-        )
+        parse_mode="html",
+        reply_markup=InlineKeyboardMarkup(
+                        [
+                            [
+                                InlineKeyboardButton("Text", "alert"")
+                            ],
+                            [
+                                InlineKeyboardButton('🧩𝐆𝐨𝐨𝐠𝐥𝐞🧩', url="https://google.com"),
+                                InlineKeyboardButton('☘𝐈𝐦𝐝𝐛☘', url="https://imdb.com")
+                            ]                            
+                        ]
+                    )
+                )         
+        
                             
 
         await asyncio.sleep(60)
