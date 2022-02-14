@@ -214,7 +214,7 @@ async def start(client, message):
    
 @Client.on_callback_query(filters.regex("alert"))
 async def alert(client, query):
-    await query.ansser("text", show_altert=True)   
+    await query.answer("text", show_alert=True)   
              
 
             
