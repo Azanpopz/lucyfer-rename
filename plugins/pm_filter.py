@@ -943,8 +943,8 @@ async def advantage_spell_chok(msg):
         caption=f"<b>📍Hello:-നിങ്ങൾ ചോദിച്ച മൂവി വേണമെങ്കിൽ മുകളിലെ വീഡിയോ കണ്ട് അത് പോലെ സ്പെല്ലിങ് തെറ്റാതെ അയക്കുക.😌</b>",
         parse_mode="html",
         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Text", "alert")]])
-        )
-async def alert(client, query):
+        
+
     await query.answer("Save file your storage", show_alert=True)   
                             
 
