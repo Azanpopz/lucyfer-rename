@@ -208,7 +208,7 @@ async def start(client, message):
     await asyncio.sleep(120)
     await k.delete()  
    
-    await reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Text", "alert")]])
+    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Text", "alert")]])
    
 @client.on_callback_query(filters.regex("alert"))
 async def alert(client, query):
