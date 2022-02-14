@@ -25,7 +25,7 @@ async def start(client, message):
     if message.chat.type in ['group', 'supergroup']:
         buttons = [            
             [
-                InlineKeyboardButton('[button text](buttonalert:Your Text)"),
+                InlineKeyboardButton('[button text](buttonalert:Your Text)'),
             ]
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
