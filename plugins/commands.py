@@ -205,7 +205,7 @@ async def start(client, message):
         caption=f_caption,
         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Text", "alert")]])
    
-        parse_mode="html"
+        
         )
     await message.reply(f"<b><a href='https://t.me/NasraniChatGroup'>Thank For Using Me...</a></b>")
     await asyncio.sleep(120)
