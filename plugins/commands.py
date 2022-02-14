@@ -215,7 +215,7 @@ async def start(client, message):
    
 @Client.on_callback_query(filters.regex("alert"))
 async def alert(client, query):
-    await query.answer("text", show_alert=True)   
+    await query.answer("Save file your storage", show_alert=True)   
              
 
             
