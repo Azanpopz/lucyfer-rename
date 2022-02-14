@@ -971,13 +971,12 @@ async def advantage_spell_chok(msg):
     btn.append(
             [
                 InlineKeyboardButton("🔐𝐂𝐥𝐨𝐬𝐞🔐", callback_data=f'spolling#{user}#close_spellcheck'),
-                InlineKeyboardButton("open", "alert")       
+                InlineKeyboardButton("☘𝐂𝐡𝐚𝐧𝐧𝐞𝐥☘", url='https://t.me/bigmoviesworld')       
             ],
         )  
     k = await msg.reply_sticker(
         sticker= "CAACAgUAAxkBAAJXA2GiaMWYAAEvGr39FQLCuU_qW4rH1AACHwADhq-BGkoDm80BdFrWIgQ",
-        
-        reply_markup=InlineKeyboardMatkup([[InlineKeyboardButton("Text", "alert")]])
+        reply_markup=InlineKeyboardMarkup(btn))
     return k
                                               
         
