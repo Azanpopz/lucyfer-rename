@@ -850,10 +850,10 @@ async def auto_filter(client, msg, spoll=False):
         )
  
     btn.insert(0, [
-        InlineKeyboardButton("📀📀📀⚜ɴᴇᴡ ᴍᴏᴠɪᴇs⚜📀📀📀📀", url=f"https://t.me/nasrani_update")
+        InlineKeyboardButton("📀📀📀📀⚜ɴᴇᴡ ᴍᴏᴠɪᴇs⚜📀📀📀📀", url=f"https://t.me/nasrani_update")
     ])
     btn.insert(11, [
-        InlineKeyboardButton("📀📀📀⚜ɴᴇᴡ ᴍᴏᴠɪᴇs⚜📀📀📀📀", url=f"https://t.me/nasrani_update")
+        InlineKeyboardButton("📀📀📀📀⚜ɴᴇᴡ ᴍᴏᴠɪᴇs⚜📀📀📀📀", url=f"https://t.me/nasrani_update")
     ])
     
         
