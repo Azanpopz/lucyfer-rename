@@ -41,7 +41,7 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[            
-            InlineKeyboardButton('🕵️MENU🕵️', url=f"https://t.me/{temp.U_NAME}?start=menu"),          
+            InlineKeyboardButton('🕵️MENU🕵️', callback_data='menu'),          
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         if message.from_user.id == ADMIN:
