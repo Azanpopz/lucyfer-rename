@@ -204,11 +204,8 @@ async def start(client, message):
         file_id=file_id,
         caption=f_caption,
         reply_markup=InlineKeyboardMarkup(buttons),
-        reply_markup=InlineKeyboardMarkup(
-        [[InlineKeyboardButton("Open", "alert")]]
-        [[InlineKeyboardButton("op", "alert")]])
-   
-        
+        parse_mode="html"
+                
         )
     await message.reply(f"<b><a href='https://t.me/NasraniChatGroup'>Thank For Using Me...</a></b>")
     await asyncio.sleep(120)
@@ -216,10 +213,7 @@ async def start(client, message):
    
    
    
-@Client.on_callback_query(filters.regex("alert"))
-async def alert(client, query):
-    await query.answer("Save file your storage", show_alert=True)   
-             
+
 
             
 
