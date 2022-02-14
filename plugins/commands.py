@@ -183,7 +183,7 @@ async def start(client, message):
             f_caption=f_caption
     if f_caption is None:
         f_caption = f"{files.file_name}"
-    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Text", "alert")]])
+    
    
     buttons = [
                     [
@@ -203,6 +203,7 @@ async def start(client, message):
         chat_id=message.from_user.id,
         file_id=file_id,
         caption=f_caption,
+        reply_markup=InlineKeyboardMarkup(buttons),
         reply_markup=InlineKeyboardMarkup(
         [[InlineKeyboardButton("Open", "alert")]]
         [[InlineKeyboardButton("op", "alert")]])
@@ -213,7 +214,7 @@ async def start(client, message):
     await asyncio.sleep(120)
     await k.delete()  
    
-    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Text", "alert")]])
+   
    
 @Client.on_callback_query(filters.regex("alert"))
 async def alert(client, query):
