@@ -945,7 +945,7 @@ async def advantage_spell_chok(msg):
         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(
                         [
                             [
-                                InlineKeyboardButton("Text", "alert"")
+                                InlineKeyboardButton("Text", "alert")
                             ],
                             [
                                 InlineKeyboardButton('🧩𝐆𝐨𝐨𝐠𝐥𝐞🧩', url="https://google.com"),
