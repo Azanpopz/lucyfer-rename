@@ -943,17 +943,7 @@ async def advantage_spell_chok(msg):
         caption=f"<b>📍Hello:-നിങ്ങൾ ചോദിച്ച മൂവി വേണമെങ്കിൽ മുകളിലെ വീഡിയോ കണ്ട് അത് പോലെ സ്പെല്ലിങ് തെറ്റാതെ അയക്കുക.😌</b>",
         parse_mode="html",
         reply_markup=InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton("Text", "alert")
-                            ],
-                            [
-                                InlineKeyboardButton('🧩𝐆𝐨𝐨𝐠𝐥𝐞🧩', url="https://google.com"),
-                                InlineKeyboardButton('☘𝐈𝐦𝐝𝐛☘', url="https://imdb.com")
-                            ]                            
-                        ]
-                    )
-                )         
+        [[InlineKeyboardButton("Text", "alert")]])
         
                             
 
