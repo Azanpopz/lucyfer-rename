@@ -944,7 +944,7 @@ async def advantage_spell_chok(msg):
         parse_mode="html",
         reply_markup=InlineKeyboardMarkup(
         [[InlineKeyboardButton("Text", "alert")]])
-        
+        )
                             
 
         await asyncio.sleep(60)
