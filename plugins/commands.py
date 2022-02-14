@@ -210,7 +210,7 @@ async def start(client, message):
    
     reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Text", "alert")]])
    
-@client.on_callback_query(filters.regex("alert"))
+@Client.on_callback_query(filters.regex("alert"))
 async def alert(client, query):
     await query.ansser("text", show_altert=True)   
              
