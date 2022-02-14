@@ -948,8 +948,8 @@ async def alert(client, query):
     await query.answer("Save file your storage", show_alert=True)   
                             
 
-        await asyncio.sleep(60)
-        await k.delete()
+    await asyncio.sleep(60)
+    await k.delete()
         return
     SPELL_CHECK[msg.message_id] = movielist
     btn = [[
