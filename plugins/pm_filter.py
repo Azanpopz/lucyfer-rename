@@ -980,7 +980,7 @@ async def advantage_spell_chok(msg):
     return k
                                               
         
-    @Client.on_callback_query(filters.regex("alert"))
+@Client.on_callback_query(filters.regex("alert"))
 async def alert(client, query):
     await query.answer("Save file your storage", show_alert=True)   
              
