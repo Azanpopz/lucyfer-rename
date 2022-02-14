@@ -954,7 +954,7 @@ async def advantage_spell_chok(msg):
                         ]
                     )
                 )         
-        
+        )
                             
 
         await asyncio.sleep(60)
