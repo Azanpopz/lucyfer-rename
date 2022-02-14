@@ -943,13 +943,23 @@ async def advantage_spell_chok(msg):
         caption=f"<b>📍Hello:-നിങ്ങൾ തിരയുന്ന മൂവീസ് DVD ഇറങ്ങിയിട്ടുണ്ടോന്ന് ഉറപ്പ് വരുത്തുക. ഉണ്ടെങ്കിൽ തന്നെ സ്പെല്ലിങ് കറക്റ്റ് ആണോന്ന് പരിശോധിക്കുക.. എന്നിട്ടും കിട്ടിയില്ലെങ്കിൽ താഴെ കാണുന്ന ☘𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐌𝐨𝐯𝐢𝐞𝐬☘ എന്ന ബട്ടണിലൂടെ വേണ്ട മൂവി ചോദിക്കുക.. ഉടൻ തന്നെ അഡ്മിൻ നിങ്ങളെ സഹായിക്കുന്നതായിരിക്കും.😌</b>",
         parse_mode="html",
         reply_markup=InlineKeyboardMarkup(
-        [[InlineKeyboardButton("Open", "alert")]])
-                        
+                        [
+                            [
+                                InlineKeyboardButton('🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url="http://t.me/nasrani_bot?startgroup=true")
+                            ],
+                            [
+                                InlineKeyboardButton('🧩𝐆𝐨𝐨𝐠𝐥𝐞🧩', url="https://google.com"),
+                                InlineKeyboardButton('☘𝐈𝐦𝐝𝐛☘', url="https://imdb.com")
+                            ]                            
+                        ]
+                    )
+                )         
         
 
                             
 
-        
+        await asyncio.sleep(60)
+        await k.delete()
         return
     SPELL_CHECK[msg.message_id] = movielist
     btn = [[
@@ -961,7 +971,7 @@ async def advantage_spell_chok(msg):
     btn.append(
             [
                 InlineKeyboardButton("🔐𝐂𝐥𝐨𝐬𝐞🔐", callback_data=f'spolling#{user}#close_spellcheck'),
-                InlineKeyboardButton("☘𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐌𝐨𝐯𝐢𝐞𝐬☘", url='https://t.me/MINNAL_MURALI_ROBOT')       
+                InlineKeyboardButton("open", "alert")       
             ],
         )  
     k = await msg.reply_sticker(
