@@ -966,7 +966,7 @@ async def advantage_spell_chok(msg):
     k = await msg.reply_sticker(
         sticker= "CAACAgUAAxkBAAJXA2GiaMWYAAEvGr39FQLCuU_qW4rH1AACHwADhq-BGkoDm80BdFrWIgQ",
         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Text", "alert")]])
-      
+        )
     return k
                                               
         
