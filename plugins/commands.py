@@ -204,7 +204,8 @@ async def start(client, message):
         file_id=file_id,
         caption=f_caption,
         reply_markup=InlineKeyboardMarkup(
-        [[InlineKeyboardButton("Open", "alert")]])
+        [[InlineKeyboardButton("Open", "alert")]]
+        [[InlineKeyboardButton("op", "alert")]])
    
         
         )
