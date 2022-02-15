@@ -138,13 +138,13 @@ async def start(client, message):
             try:
                     k = await message.reply(f"⏳DOWNLOADING⏳◎")
                     await asyncio.sleep(2)
-                    await k.delete()
+                    
                     k = await message.reply(f"⏳DOWNLOADING⏳◎ ◎")
-                    await asyncio.sleep(2)
-                    await k.delete()
+                    await asyncio.sleep(4)
+                    
                     k = await message.reply(f"⏳DOWNLOADING⏳◎ ◎ ◎")
-                    await asyncio.sleep(2)
-                    await k.delete()
+                    await asyncio.sleep(6)
+                    
                     k = await client.send_cached_media(
                     chat_id=message.from_user.id,
                     file_id=b_file,
