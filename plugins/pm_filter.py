@@ -980,7 +980,7 @@ async def advantage_spell_chok(msg):
             ],
         )
     k = await msg.reply(f"<b><a href='https://t.me/NasraniChatGroup'>Thank For Using Me...</a></b>")
-    reply_markup=InlineKeyboardMarkup(btn))
+    
     return k
     
     k = await msg.reply_sticker(
