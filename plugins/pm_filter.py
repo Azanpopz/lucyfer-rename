@@ -942,8 +942,8 @@ async def advantage_spell_chok(msg):
     movielist = list(dict.fromkeys(movielist)) # removing duplicates
     if not movielist:
 
-        await message.reply(f"<b><a href='https://telegra.ph/file/ec5404d035924f1113d8d.mp4'>Thank For Using Me...</a></b>")
-       
+        await message.reply(f"<b><a href='https://t.me/NasraniChatGroup'>Thank For Using Me...</a></b>")
+   
         k = await msg.reply_video(
         video= "https://telegra.ph/file/ec5404d035924f1113d8d.mp4",
         caption=f"<b>📍Hello:-നിങ്ങൾ ചോദിച്ച മൂവി വേണമെങ്കിൽ മുകളിലെ വീഡിയോ കണ്ട് അത് പോലെ സ്പെല്ലിങ് തെറ്റാതെ അയക്കുക.😌</b>",
