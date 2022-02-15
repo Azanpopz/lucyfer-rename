@@ -174,7 +174,7 @@ async def advantage_spoll_choker(bot, query):
 
 @Client.on_callback_query(filters.regex("alert"))
 async def alert(client, query):
-await query.answer("text", show_alert=True)
+    await query.answer("text", show_alert=True)
 
 
 @Client.on_callback_query()
