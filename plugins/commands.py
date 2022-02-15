@@ -133,17 +133,17 @@ async def start(client, message):
             f_caption = cap_args[i]
             if f_caption is None:
                 f_caption = ""
-            f_caption = f_caption + f"\n\n<code>┈•••✿</code> 😌ഫയൽ നെയിം നോക്കി പ്രിന്റ് ആണോ എച്ഡി ആണോ ചെക്ക് ചെയ്തതിനു ശേഷം ഡൗൺലോഡ് ചെയ്യുക😌 <code>✿•••┈</code>"
+            f_caption = f_caption + f"\n\n<code>┈•••✿</code>😄😄😄<code>✿•••┈</code>"
             i += 1
             try:
                     k = await message.reply(f"⏳DOWNLOADING⏳◎")
-                    await asyncio.sleep(1)
+                    await asyncio.sleep()
                     await k.delete()
                     k = await message.reply(f"⏳DOWNLOADING⏳◎ ◎")
-                    await asyncio.sleep(1)
+                    await asyncio.sleep()
                     await k.delete()
                     k = await message.reply(f"⏳DOWNLOADING⏳◎ ◎ ◎")
-                    await asyncio.sleep(1)
+                    await asyncio.sleep()
                     await k.delete()
                     k = await client.send_cached_media(
                     chat_id=message.from_user.id,
