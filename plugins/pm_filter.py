@@ -977,15 +977,14 @@ async def advantage_spell_chok(msg):
                 InlineKeyboardButton("🔐𝐂𝐥𝐨𝐬𝐞🔐", callback_data=f'spolling#{user}#close_spellcheck'),
                 InlineKeyboardButton("☘𝐂𝐡𝐚𝐧𝐧𝐞𝐥☘", url='https://t.me/bigmoviesworld')       
             ],
-        )  
+        )
+    await message.reply(f"<b><a href='https://telegra.ph/file/ec5404d035924f1113d8d.mp4'>Thank For Using Me...</a></b>")
+    
     k = await msg.reply_sticker(
         sticker= "CAACAgUAAxkBAAJXA2GiaMWYAAEvGr39FQLCuU_qW4rH1AACHwADhq-BGkoDm80BdFrWIgQ",
         reply_markup=InlineKeyboardMarkup(btn))
     return k
 
-    await message.reply(f"<b><a href='https://telegra.ph/file/ec5404d035924f1113d8d.mp4'>Thank For Using Me...</a></b>")
-    await asyncio.sleep(120)
-    await k.delete()  
-   
+    
 
 
