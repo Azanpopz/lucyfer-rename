@@ -180,7 +180,7 @@ async def get_all(client, message):
         parse_mode="md"
     )
         
-@Client.on_message(filters.command('del') & filters.incoming)
+@Client.on_message(filters.command('df') & filters.incoming)
 async def deletefilter(client, message):
     userid = message.from_user.id if message.from_user else None
     if not userid:
@@ -231,7 +231,7 @@ async def deletefilter(client, message):
     await delete_filter(message, query, grp_id)
         
 
-@Client.on_message(filters.command('delall') & filters.incoming)
+@Client.on_message(filters.command('deletefilters') & filters.incoming)
 async def delallconfirm(client, message):
     userid = message.from_user.id if message.from_user else None
     if not userid:
