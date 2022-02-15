@@ -213,7 +213,11 @@ async def start(client, message):
                 
         )
     await message.reply(f"<b><a href='https://t.me/NasraniChatGroup'>Thank For Using Me...</a></b>")
-      
+    await message.reply_sticker(
+            sticker=random.choice(STC),
+            reply_markup=reply_markup,
+
+        )
    
    
    
