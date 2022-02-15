@@ -941,7 +941,9 @@ async def advantage_spell_chok(msg):
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist)) # removing duplicates
     if not movielist:
-          
+
+        await message.reply(f"<b><a href='https://telegra.ph/file/ec5404d035924f1113d8d.mp4'>Thank For Using Me...</a></b>")
+       
         k = await msg.reply_video(
         video= "https://telegra.ph/file/ec5404d035924f1113d8d.mp4",
         caption=f"<b>📍Hello:-നിങ്ങൾ ചോദിച്ച മൂവി വേണമെങ്കിൽ മുകളിലെ വീഡിയോ കണ്ട് അത് പോലെ സ്പെല്ലിങ് തെറ്റാതെ അയക്കുക.😌</b>",
@@ -978,7 +980,6 @@ async def advantage_spell_chok(msg):
                 InlineKeyboardButton("☘𝐂𝐡𝐚𝐧𝐧𝐞𝐥☘", url='https://t.me/bigmoviesworld')       
             ],
         )
-    await message.reply(f"<b><a href='https://telegra.ph/file/ec5404d035924f1113d8d.mp4'>Thank For Using Me...</a></b>")
     
     k = await msg.reply_sticker(
         sticker= "CAACAgUAAxkBAAJXA2GiaMWYAAEvGr39FQLCuU_qW4rH1AACHwADhq-BGkoDm80BdFrWIgQ",
