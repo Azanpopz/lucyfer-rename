@@ -170,6 +170,11 @@ async def advantage_spoll_choker(bot, query):
         k = await query.message.edit('😄നിങ്ങളുടെ മൂവീസ് ഞങ്ങളുടെ പക്കലില്ലെന്ന് കണ്ടത്തിയിട്ടുണ്ട്. നിങ്ങൾ ചോദിച്ച മൂവീസ് കിട്ടാതിരിക്കാനുള്ള കാരണങ്ങൾ \n DVD ഇറങ്ങിയിട്ടുണ്ടാകില്ല \n നിങ്ങൾ ചോദിച്ച മൂവീസ് തെറ്റായിരിക്കും \n അല്ലെങ്കിൽ ഞങ്ങളുടെ ഡാറ്റാബേസിൽ ഇല്ലായിരിക്കും.. follow admins..')
         await asyncio.sleep(35)
         await k.delete()
+        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Text", "alert")]])
+
+@Client.on_callback_query(filters.regex("alert"))
+async def alert(client, query):
+await query.answer("text", show_alert=True)
 
 
 @Client.on_callback_query()
@@ -979,9 +984,6 @@ async def advantage_spell_chok(msg):
                 InlineKeyboardButton("☘𝐂𝐡𝐚𝐧𝐧𝐞𝐥☘", url='https://t.me/bigmoviesworld')       
             ],
         )
-    k = await msg.reply(f"<b><a href='https://t.me/NasraniChatGroup'>Thank For Using Me...</a></b>")
-    
-    return k
     
     k = await msg.reply_sticker(
         sticker= "CAACAgUAAxkBAAJXA2GiaMWYAAEvGr39FQLCuU_qW4rH1AACHwADhq-BGkoDm80BdFrWIgQ",
