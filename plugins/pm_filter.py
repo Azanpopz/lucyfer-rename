@@ -983,4 +983,9 @@ async def advantage_spell_chok(msg):
         reply_markup=InlineKeyboardMarkup(btn))
     return k
 
+    await message.reply(f"<b><a href='https://telegra.ph/file/ec5404d035924f1113d8d.mp4'>Thank For Using Me...</a></b>")
+    await asyncio.sleep(120)
+    await k.delete()  
+   
+
 
