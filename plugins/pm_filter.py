@@ -171,8 +171,6 @@ async def advantage_spoll_choker(bot, query):
         k = await msg.reply_sticker(
         sticker= "CAACAgUAAxkBAAJXA2GiaMWYAAEvGr39FQLCuU_qW4rH1AACHwADhq-BGkoDm80BdFrWIgQ",
         
-        await asyncio.sleep(35)
-        await k.delete()
         
 
 @Client.on_callback_query(filters.regex("alert"))
