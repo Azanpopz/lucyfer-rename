@@ -1,3 +1,5 @@
+import asyncio
+
 import io
 from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
@@ -107,13 +109,15 @@ async def addfilter(client, message):
     else:
         return
 
-    await add_filter(grp_id, text, reply_text, btn, fileid, alert)
+    fmsg = await add_filter(grp_id, text, reply_text, btn, fileid, alert)
 
-    await message.reply_text(
+    fmsg = await message.reply_text(
         f"Filter for  `{text}`  added in  **{title}**",
         quote=True,
         parse_mode="md"
     )
+    await asyncio.sleep(5)
+    await fmsg.delete()
 
 
 @Client.on_message(filters.command(['viewfilters', 'filters']) & filters.incoming)
