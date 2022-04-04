@@ -117,7 +117,7 @@ async def addfilter(client, message):
         parse_mode="md"
     )
     await asyncio.sleep(5)
-    await fmsg.delete()
+    await msg.delete()
 
 
 @Client.on_message(filters.command(['viewfilters', 'filters']) & filters.incoming)
