@@ -842,6 +842,11 @@ async def auto_filter(client, msg, spoll=False):
             ]
             for file in files
         ]
+    await message.reply_chat_action("Typing")
+    m=await message.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
+    await asyncio.sleep(2)
+    await m.delete()
+    
 
     if offset != "":
         key = f"{message.chat.id}-{message.message_id}"
@@ -862,6 +867,8 @@ async def auto_filter(client, msg, spoll=False):
         InlineKeyboardButton("📀⚜ɴᴇᴡ ᴍᴏᴠɪᴇs⚜📀", url=f"https://t.me/nasrani_update")
     ])
     
+
+
         
     imdb = await get_poster(search, file=(files[0]).file_name) if IMDB else None
     if imdb:
@@ -912,7 +919,7 @@ async def auto_filter(client, msg, spoll=False):
     else:
         fmsg = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     
-    await asyncio.sleep(DELETE_TIME)
+    await asyncio.sleep(180)
     await fmsg.delete()
 
     if spoll:
