@@ -921,9 +921,23 @@ async def auto_filter(client, msg, spoll=False):
     
     await asyncio.sleep(180)
     await fmsg.delete()
+    await message.reply_text(
+    text=f"⚙️ {message.from_user.mention} Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️",
+    parse_mode="html",
+    reply_markup=InlineKeyboardMarkup(
+                        [
+                            [
+                                InlineKeyboardButton('🎁𝐆𝐫𝐨𝐮𝐩🎁', url="http://t.me/nasrani_update")
+                            ],
+                                                        
+                        ]
+                    )
+                )
 
     if spoll:
         await msg.message.delete()
+    
+    
         
 
 async def advantage_spell_chok(msg):
