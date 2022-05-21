@@ -54,22 +54,3 @@ youtube_search
 ytthumb
 ffmpeg-python
 
-carbonnow==0.0.1
-Pillow>=4.2.0
-bs4
-string-extract
-domain-extract
-hashtags_extract
-Pymoe
-pendulum
-pytesseract
-pyshorteners
-catdoesnotexist
-python-decouple
-speedtest-cli
-countryinfo
-python-telegram-bot==11.1.0
-pyromod~=1.5
-gtts
-yt_dlp
-wget
